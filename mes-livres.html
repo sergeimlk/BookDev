@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Livres</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-back">
+            <button onclick="window.history.back()">⏪</button>
+            <h1>Mes livres</h1>
+        </div>
+        <div class="tabs">
+            <button class="tab active">Favoris</button>
+            <button class="tab">Téléchargés</button>
+        </div>
+    </header>
+
+    <section class="book-list">
+        <div class="book-item">
+            <img src="wizard-of-oz.jpg" alt="The Wonderful Wizard of Oz">
+            <div>
+                <span>⭐ Note</span>
+                <h3>Titre du livre</h3>
+                <p>Auteur du livre</p>
+            </div>
+            <p>$???.00</p>
+            <span class="bookmark">🔖</span>
+        </div>
+
+        <div class="book-item">
+            <img src="jaws.jpg" alt="Jaws">
+            <div>
+                <span>⭐ Note</span>
+                <h3>Titre du livre</h3>
+                <p>Auteur du livre</p>
+            </div>
+            <p>$???.00</p>
+            <span class="bookmark">🔖</span>
+        </div>
+
+        <!-- Ajouter plus de livres ici -->
+    </section>
+
+    <footer>
+        <nav>
+            <a href="index.html">📖</a>
+            <a href="#" class="active">📚</a>
+            <a href="#">💬</a>
+            <a href="#">👤</a>
+        </nav>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
