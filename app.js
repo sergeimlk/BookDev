@@ -2,18 +2,6 @@ document.getElementById('favoris-btn').addEventListener('click', function() {
     window.location.href = 'mes-livres.html';
 });
 
-// Données fictives des livres
-const featuredBooks = [
-    { title: 'The Wonderful Wizard of Oz', author: 'L. Frank Baum' },
-    { title: 'Sleep in a Sea of Stars', author: 'Christopher Paolini' },
-    { title: 'The Sum of All Things', author: 'E.L. Brooks' },
-];
-
-const newReleases = [
-    { title: 'Nothing Else But Miracles', author: 'Kate Albus' },
-    { title: 'Jaws', author: 'Peter Benchley' },
-    { title: 'The Metamorphosis', author: 'Franz Kafka' },
-];
 
 // Fonction pour générer les cartes de livre
 function generateBookCards(books, containerSelector) {
