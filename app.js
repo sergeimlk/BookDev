@@ -81,3 +81,22 @@ document.querySelector('.carousel').addEventListener('wheel', (evt) => {
         behavior: 'smooth'
     });
 });
+
+const st = {};
+
+st.flap = document.querySelector('#flap');
+st.tabs = document.querySelector('.tabs');
+st.favoris = document.querySelector('#favoris');
+st.telecharges = document.querySelector('#telecharges');
+
+document.addEventListener('DOMContentLoaded', () => {
+    st.flap.children[0].textContent = st.favoris.nextElementSibling.textContent;
+});
+
+document.addEventListener('click', (e) => {
+    if (e.target.tagName === 'LABEL') {
+        setTimeout(() => {
+            st.flap.children[0].textContent = e.target.textContent;
+        }, 250);
+    }
+});

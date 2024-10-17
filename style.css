@@ -61,7 +61,16 @@ header .logo {
     gap: 1rem;
 }
 
-.carousel .activity-card, .carousel .book-card {
+.activity-card {
+    width: 500px; /* Same width as .category-card */
+    background-color: #fff;
+    padding: 1rem; /* Same padding as .category-card */
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.carousel .activity-card, .book-card {
     flex: 0 0 auto;
     scroll-snap-align: start;
     width: 200px;
@@ -73,6 +82,12 @@ header .logo {
 }
 
 .carousel .activity-card img, .carousel .book-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.625rem;
+}
+
+.carousel .category-card img {
     width: 100%;
     height: auto;
     border-radius: 0.625rem;
@@ -112,24 +127,34 @@ footer nav a.active {
 }
 
 .categories {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
     padding: 1rem;
-    width: calc(100% - 2rem); /* Reduce width to fit within the screen */
-    box-sizing: border-box;
-    margin: 0 auto; /* Center the categories section */
+    gap: 1rem;
 }
 
 .categories .category-card {
-    flex: 1 1 calc(30% - 1rem); /* Adjusted to fit three cards per row with gap */
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 500px; /* Same width as .activity-card */
     background-color: #fff;
-    padding: 1rem;
+    padding: 1rem; /* Same padding as .activity-card */
     border-radius: 0.625rem;
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
+.categories .category-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.625rem;
+}
+
 @media (max-width: 1024px) {
     .categories .category-card {
-        flex: 1 1 calc(50% - 1rem); /* Two cards per row with gap */
+        width: 150px; /* Adjust width for smaller screens */
     }
 }
 
@@ -151,5 +176,7 @@ footer nav a.active {
         margin-bottom: 1rem;
     }
 
-
+    .categories .category-card {
+        width: 150px; /* Adjust width for smaller screens */
+    }
 }
