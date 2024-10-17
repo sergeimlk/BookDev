@@ -7,6 +7,8 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -15,12 +17,19 @@ header {
     align-items: center;
     padding: 1rem;
     background: linear-gradient(to right, #4b0082, #8a2be2); /* Dark violet gradient */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     font-size: 2rem;
     flex-grow: 1;
     text-align: center;
+    background: linear-gradient(to bottom, #e8c84c, #ffffff); /* Golden to white gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none; /* Prevent underline */
 }
 
 header .logo {
@@ -49,23 +58,7 @@ header .logo {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding: 1rem;
-}
-
-.book-card {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    margin-right: 1rem;
-    width: 200px;
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 0.625rem;
-    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
-}
-
-.book-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 0.625rem;
+    gap: 1rem;
 }
 
 footer {
@@ -95,9 +88,82 @@ footer nav a.active {
     color: #fdd835;
 }
 
+.recent-activities {
+    padding: 1rem;
+    width: 80px; /* Increased width */
+}
+
+.recent-activities {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 100%; /* Make it responsive to the width of the screen */
+    max-width: 50rem; /* Set a maximum width */
+    height: auto; /* Adjust height automatically */
+    max-height: 30rem; /* Set a maximum height */
+    padding: 1rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.categories .category-card {
+    flex: 1 1 calc(33.333% - 1rem); /* Three cards per row with gap */
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .categories .category-card {
+        flex: 1 1 calc(50% - 1rem); /* Two cards per row with gap */
+    }
+}
+
+@media (max-width: 768px) {
+    .categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categories .category-card {
+        flex: 1 1 100%; /* One card per row */
+        margin-bottom: 1rem;
+    }
+}
+.activity-card img {
+    width: 100rem; /* Increased width */
+    height: auto;
+    border-radius: 0.625rem;
+}
+
+.activity-card, .book-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 200px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.activity-card img, .book-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.625rem;
+}
+
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     header h1 {
@@ -105,7 +171,7 @@ footer nav a.active {
     }
 
     .carousel {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .book-card {
