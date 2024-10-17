@@ -47,10 +47,10 @@ header h1 {
 
 main {
     flex-grow: 1;
-    padding: 2rem;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 
 /* Profile Card */
@@ -62,7 +62,9 @@ main {
     text-align: center;
     width: 100%;
     max-width: 400px;
-    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .profile-card .avatar {
@@ -81,7 +83,7 @@ main {
 
 .profile-info p {
     color: #666;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .edit-profile-button {
@@ -97,75 +99,6 @@ main {
 
 .edit-profile-button:hover {
     background-color: #8a2be2;
-}
-
-/* User Stats */
-.user-stats {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.user-stats h3 {
-    color: #5d34a6;
-    margin-bottom: 1rem;
-}
-
-.stats-grid {
-    display: flex;
-    justify-content: space-around;
-}
-
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #5d34a6;
-}
-
-.stat-item i {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Favorite Books Section */
-.favorite-books {
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-}
-
-.favorite-books h3 {
-    color: #5d34a6;
-    margin-bottom: 1rem;
-}
-
-.book-list {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.book-item {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    flex: 1;
-}
-
-.book-item img {
-    width: 100px;
-    height: 150px;
-    object-fit: cover;
-    margin-bottom: 0.5rem;
-}
-
-.book-item p {
-    font-size: 0.9rem;
-    color: #666;
 }
 
 /* Footer Navigation */
@@ -198,4 +131,6 @@ footer nav a.active {
     color: #fdd835;
 }
 
-footer nav a:hover
+footer nav a:hover {
+    color: #fdd835;
+}
