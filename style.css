@@ -26,7 +26,7 @@ header h1 {
     flex-grow: 1;
     text-align: center;
     background: linear-gradient(to bottom, #e8c84c, #ffffff); /* Golden to white gradient */
-    /* background-clip: text; */
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none; /* Prevent underline */
@@ -61,7 +61,7 @@ header .logo {
     gap: 1rem;
 }
 
-.carousel .activity-card, .carousel .book-card {
+.carousel .activity-card, .carousel .book-card, .carousel .category-card {
     flex: 0 0 auto;
     scroll-snap-align: start;
     width: 200px;
@@ -70,12 +70,23 @@ header .logo {
     border-radius: 0.625rem;
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.carousel .activity-card img, .carousel .book-card img {
+.carousel .activity-card img, .carousel .book-card img, .carousel .category-card img {
     width: 100%;
     height: auto;
     border-radius: 0.625rem;
+}
+
+.carousel .category-card {
+    width: 600px; /* Enlarge the category cards */
+    height: 300px; /* Ensure the cards are square */
+}
+
+.carousel .activity-card:hover, .carousel .book-card:hover, .carousel .category-card:hover {
+    transform: scale(1.1); /* Enlarge the card on hover */
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2); /* Add a larger shadow on hover */
 }
 
 footer {
@@ -112,24 +123,28 @@ footer nav a.active {
 }
 
 .categories {
-    padding: 1rem; /* Ensure consistent padding */
+    padding: 1rem 0; /* Ensure consistent padding, remove left and right padding */
     width: 100%; /* Make it responsive to the width of the screen */
     box-sizing: border-box;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    gap: 1rem; /* Add gap between cards */
+    margin-left: 0; /* Ensure the carousel starts from the left edge */
 }
 
 .categories .category-card {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    width: 200px; /* Same width as .activity-card */
+    width: 300px; /* Make the category cards wider */
+    height: 200px; /* Make the category cards rectangular */
     background-color: #fff;
     padding: 1rem; /* Same padding as .activity-card */
     border-radius: 0.625rem;
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .categories .category-card img {
@@ -138,9 +153,15 @@ footer nav a.active {
     border-radius: 0.625rem;
 }
 
+.categories .category-card:hover {
+    transform: scale(1.1); /* Enlarge the card on hover */
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2); /* Add a larger shadow on hover */
+}
+
 @media (max-width: 1024px) {
     .categories .category-card {
-        width: 150px; /* Adjust width for smaller screens */
+        width: 250px; /* Adjust width for smaller screens */
+        height: 150px; /* Adjust height for smaller screens */
     }
 }
 
