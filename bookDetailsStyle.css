@@ -58,7 +58,7 @@
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .filAriane a:hover {
@@ -69,7 +69,6 @@
     margin: 0 0.5rem;
     color: white;
 }
-
 
 /*MAIN BOOK*/
 
@@ -194,11 +193,9 @@
     text-decoration: none;
 }
 
-
 .active-page {
     background-color: #f2f1f342;
 }
-
 
 /*CTA*/
 
@@ -345,6 +342,13 @@
     }
 
     .bookDetails-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        margin: 0 5rem;
+    }
+
+    .authorDetails-container {
         display: flex;
         flex-direction: row;
         justify-content: start;
