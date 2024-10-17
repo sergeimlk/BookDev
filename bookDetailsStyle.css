@@ -45,6 +45,32 @@
     display: none;
 }
 
+.filAriane {
+    padding: 0 0 1rem 15rem;
+    display: none;
+    font-size: 1rem;
+    color: white;
+    text-align: left;
+
+}
+
+.filAriane a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 20px;
+}
+
+.filAriane a:hover {
+    color: #f39c12;
+}
+
+.filAriane span {
+    margin: 0 0.5rem;
+    color: white;
+}
+
+
 /*MAIN BOOK*/
 
 .bookDetails-container {
@@ -243,20 +269,34 @@
 
 @media (min-width: 1024px) {
 
-
     main {
-        background: linear-gradient(#4D3857, #2C1A34);
+        background-color: #4D3857;
+    }
+
+    .main-container {
+        /* background: linear-gradient(#4D3857, #2C1A34); */
+        background-color: #3d1e54;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        padding: 3rem;
+        margin: 0 8rem;
     }
 
     .header-container h1 {
+        display: none;
         position: absolute;
         font-size: 5rem;
         padding-top: 10rem;
     }
 
     .header-container {
+        background-color: #4D3857;
         display: grid;
         justify-content: flex-end;
+    }
+
+    .filAriane {
+        display: block;
     }
 
     .header-container i {
@@ -267,7 +307,7 @@
         height: 3.5rem;
         margin: 1rem 3rem 1rem 1rem;
         top: 18rem;
-        right: 5rem;
+        right: 8rem;
     }
 
     .iconFav, .iconShare {
@@ -280,12 +320,12 @@
 
     .iconFav {
         top: 19.5rem;
-        right: 15rem;
+        right: 17rem;
     }
 
     .iconShare {
         top: 25.5rem;
-        right: 15rem;
+        right: 17rem;
     }
 
     .header-container .fa-backward {
@@ -337,6 +377,9 @@
     .nav-about a {
         padding: 2rem;
         width: 30rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .author-infos p {
@@ -349,7 +392,7 @@
 
     .about {
         padding: 5rem;
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .cta {
