@@ -1,0 +1,81 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Jaws",
+      "author": "Peter Benchley",
+      "price": "$19.99",
+      "rating": "★★★★★",
+      "image": "IMG/jaws.jpg",
+      "category": "Thriller",
+      "publicationDate": "1974",
+      "description": "Jaws, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies, nunc nec vehicula ultricies, nunc nec vehicula ultricies, nunc nec vehicula. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nobis libero laboriosam dolorum. Nemo ipsam amet magnam architecto cumque provident accusamus molestiae, velit, autem itaque consectetur a distinctio necessitatibus ullam."
+    },
+    {
+      "id": 2,
+      "title": "Nothing Else But Miracles",
+      "author": "Kate Albus",
+      "price": "$15.99",
+      "rating": "★★★★",
+      "image": "IMG/noth.jpeg",
+      "category": "Fiction",
+      "publicationDate": "2022",
+            "description": "Nothing else but Miracles, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies, nunc nec vehicula ultricies, nunc nec vehicula ultricies, nunc nec vehicula. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nobis libero laboriosam dolorum. Nemo ipsam amet magnam architecto cumque provident accusamus molestiae, velit, autem itaque consectetur a distinctio necessitatibus ullam."
+    },
+    {
+      "id": 3,
+      "title": "The meeeeeeeeeeeeeeeeeeeeeeeeeta",
+      "author": "Franz Kafka",
+      "price": "$12.99",
+      "rating": "★★★★★",
+      "image": "IMG/metamo.png",
+      "category": "Classic",
+      "publicationDate": "1915",
+            "description": "the méthamorphosis, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies, nunc nec vehicula ultricies, nunc nec vehicula ultricies, nunc nec vehicula. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nobis libero laboriosam dolorum. Nemo ipsam amet magnam architecto cumque provident accusamus molestiae, velit, autem itaque consectetur a distinctio necessitatibus ullam."
+    },
+    {
+      "id": 4,
+      "title": "Sleep in a Sea of Stars",
+      "author": "Christopher Paolini",
+      "price": "$24.99",
+      "rating": "★★★",
+      "image": "IMG/sleep.jpeg",
+      "category": "Science Fiction",
+      "publicationDate": "2020",
+            "description": "Sleep in a sea of stars, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies, nunc nec vehicula ultricies, nunc nec vehicula ultricies, nunc nec vehicula. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nobis libero laboriosam dolorum. Nemo ipsam amet magnam architecto cumque provident accusamus molestiae, velit, autem itaque consectetur a distinctio necessitatibus ullam."
+    },
+    {
+      "id": 5,
+      "title": "Oz",
+      "author": "L. Frank Baum",
+      "price": "$14.99",
+      "rating": "★★★★",
+      "image": "IMG/oz.jpg",
+      "category": "Fantasy",
+      "publicationDate": "1900",
+            "description": "Oz, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies, nunc nec vehicula ultricies, nunc nec vehicula ultricies, nunc nec vehicula. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nobis libero laboriosam dolorum. Nemo ipsam amet magnam architecto cumque provident accusamus molestiae, velit, autem itaque consectetur a distinctio necessitatibus ullam."
+    },
+    {
+      "id": 6,
+      "title": "Think and Grow Rich",
+      "author": "Napoleon Hill",
+      "price": "$18.99",
+      "rating": "★★★★",
+      "image": "IMG/think and grow.webp",
+      "category": "Self-help",
+      "publicationDate": "1937",
+            "description": "Think and grow rich, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies, nunc nec vehicula ultricies, nunc nec vehicula ultricies, nunc nec vehicula. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nobis libero laboriosam dolorum. Nemo ipsam amet magnam architecto cumque provident accusamus molestiae, velit, autem itaque consectetur a distinctio necessitatibus ullam."
+    },
+    {
+      "id": 7,
+      "title": "The Sum of All Things",
+      "author": "Ray Nayler",
+      "price": "$22.99",
+      "rating": "★★★",
+      "image": "IMG/TheSumofAllThings.webp",
+      "category": "Mystery",
+      "publicationDate": "2023",
+            "description": "The sum of all things, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies, nunc nec vehicula ultricies, nunc nec vehicula ultricies, nunc nec vehicula. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nobis libero laboriosam dolorum. Nemo ipsam amet magnam architecto cumque provident accusamus molestiae, velit, autem itaque consectetur a distinctio necessitatibus ullam."  
+    }
+  ]
+}
