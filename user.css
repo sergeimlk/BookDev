@@ -13,12 +13,70 @@ body {
     box-shadow: 0 5px 20px #4b0082;
     border-radius: 50px;
     padding: 30px;
+    width: 70%; /* Reduce the width by 30% */
+    margin: 0 auto; /* Center the div */
 }
 
 .profile-header {
     display: flex;
     align-items: flex-start;
     padding-bottom: 20px;
+}
+
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem; /* Decrease padding to reduce navbar height */
+  background: linear-gradient(to right, #4b0082, #8a2be2); /* Dark violet gradient */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 5rem; /* Garde la hauteur de la navbar inchangée */
+}
+
+header h1 {
+  font-size: 2rem;
+  flex-grow: 1;
+  text-align: center;
+  background: linear-gradient(to bottom, #e8c84c, #ffffff); /* Golden to white gradient */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none; /* Prevent underline */
+}
+
+
+
+.user-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding-right: 4rem;
+}
+
+.search-bar {
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  background-color: #e5e5e5;
+  padding: 0.25rem 0.5rem; /* Decrease padding to reduce searchbar height */
+  border-radius: 0.625rem;
+  margin-left: auto; /* Align to the right */
+}
+
+.search-bar input {
+  border: none;
+  background: none;
+  padding: 0.25rem; /* Decrease padding to reduce navbar height */
 }
 
 .avatar {

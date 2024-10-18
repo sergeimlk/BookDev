@@ -221,6 +221,12 @@ header {
     height: 5rem;
     /* Garde la hauteur de la navbar inchangée */
 }
+.titre-msg {
+    position: absolute;
+    top: 1.2rem;
+    left: 10rem;
+}
+
 .user-button {
     background: none;
     border: none;
@@ -241,12 +247,6 @@ header h1 {
     -webkit-text-fill-color: transparent;
     text-decoration: none;
     /* Prevent underline */
-}
-
-header .logo {
-    max-height: 4rem; /* Increase the maximum height */
-    height: auto;
-    margin-right: 0rem;
 }
 
 .search-bar {

@@ -40,12 +40,6 @@ header h1 {
   text-decoration: none; /* Prevent underline */
 }
 
-header .logo {
-  max-height: 3rem;
-  height: auto;
-  margin-right: 0rem;
-}
-
 .search-bar {
   margin-right: 2rem;
   display: flex;
