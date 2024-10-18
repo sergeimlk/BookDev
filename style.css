@@ -88,11 +88,6 @@ header .logo {
     border-radius: 0.625rem;
 }
 
-.carousel .category-card {
-    width: 600px; /* Enlarge the category cards */
-    height: 300px; /* Ensure the cards are square */
-}
-
 .carousel .activity-card:hover, .carousel .book-card:hover, .carousel .category-card:hover {
     transform: scale(1.1); /* Enlarge the card on hover */
     box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2); /* Add a larger shadow on hover */
@@ -146,8 +141,8 @@ footer nav a.active {
 .categories .category-card {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    width: 300px; /* Make the category cards wider */
-    height: 200px; /* Make the category cards rectangular */
+    width: 50rem; /* Make the category cards wider */
+    height: auto; /* Make the category cards rectangular */
     background-color: #fff;
     padding: 1rem; /* Same padding as .activity-card */
     border-radius: 0.625rem;
