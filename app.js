@@ -27,6 +27,15 @@ function generateBookCards(books, containerSelector) {
         container.appendChild(bookCard);
     });
 }
+// ProgressBar dans les livres du user
+document.addEventListener('DOMContentLoaded', function() {
+    const progressBars = document.querySelectorAll('.progress');
+
+    progressBars.forEach(progress => {
+        const randomPercentage = Math.floor(Math.random() * 101); // Generate a random percentage between 0 and 100
+        progress.style.width = randomPercentage + '%';
+    });
+});
 
 document.addEventListener('DOMContentLoaded', function() {
   const tabs = document.querySelectorAll('.tab');
