@@ -1,4 +1,10 @@
-
+body {
+    margin-top: 30px;
+    color: #333;
+    margin: 0;
+    padding: 70px 0;
+    position: relative; /* Ensure the body is positioned relative for the background */
+}
 
 .profile-container {
     max-width: 800px;
@@ -125,13 +131,7 @@
     width: 2rem;
     transition: width 0.3s ease;
 }
-body {
-    margin-top: 30px;
-    color: #333;
-    margin: 0;
-    padding: 70px 0;
-    position: relative; /* Ensure the body is positioned relative for the background */
-}
+
 
 .animated-background {
     position: fixed;
@@ -159,7 +159,7 @@ body {
     background-size: 300px 150px;
     background-position: center bottom;
     clip-path: circle(150px at center center);
-    animation: flashlight 5000ms infinite;
+    animation: flashlight 15000ms infinite; /* Adjusted duration for more movements */
 }
 .animated-background:after {
     content: '';
@@ -229,20 +229,41 @@ body {
     }
 }
 @keyframes flashlight {
-    0%, 9% {
+    0%, 3% {
         opacity: 0;
         clip-path: circle(150px at 45% 10%);
     }
-    10%, 15%, 85% {
+    4%, 7%, 97% {
         opacity: 1;
     }
+    10% {
+        clip-path: circle(450px at 0% 0%);
+    }
+    20% {
+        clip-path: circle(450px at 100% 0%);
+    }
+    30% {
+        clip-path: circle(450px at 100% 100%);
+    }
+    40% {
+        clip-path: circle(450px at 0% 100%);
+    }
     50% {
-        clip-path: circle(150px at 60% 20%);
+        clip-path: circle(450px at 50% 50%);
     }
-    54%, 100% {
-        clip-path: circle(150px at 55% 92%);
+    60% {
+        clip-path: circle(450px at 50% 50%);
     }
-    88%, 100% {
+    70% {
+        clip-path: circle(450px at 50% 50%);
+    }
+    80% {
+        clip-path: circle(450px at 50% 50%);
+    }
+    90% {
+        clip-path: circle(450px at 50% 50%);
+    }
+    98%, 100% {
         opacity: 0;
     }
 }
