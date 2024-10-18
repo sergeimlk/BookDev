@@ -25,7 +25,7 @@ header {
     right: 0;
     width: 100%;
     z-index: 1000;
-    height: 5rem; /* Modif la hauteur de la navbar inchangée */
+    height: 5rem; /* Garde la hauteur de la navbar inchangée */
 }
 
 header h1 {
@@ -42,7 +42,7 @@ header h1 {
 header .logo {
     max-height: 3rem;
     height: auto;
-    margin-right: 1rem;
+    margin-right: 0rem;
 }
 
 .search-bar {
