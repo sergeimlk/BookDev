@@ -42,12 +42,33 @@ header h1 {
     text-decoration: none; /* Prevent underline */
 }
 
-header .back-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
+
+.title-link {
+    text-decoration: none;
+    /* Remove underline */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title-link h1 {
+    margin: 0;
+    font-size: 2rem;
+    background: linear-gradient(to bottom, #e8c84c, #ffffff);
+    /* Golden to white gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    /* Prevent underline */
+}
+
+.title-msg {
+    margin-top: 0rem;
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
 }
 
 main {
@@ -154,4 +175,95 @@ footer nav a.active {
 
 footer nav a:hover {
     color: #fdd835;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .carousel {
+        flex-direction: row;
+    }
+
+    .book-card {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .categories .category-card {
+        width: 150px;
+        /* Adjust width for smaller screens */
+    }
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    /* Decrease padding to reduce navbar height */
+    background: linear-gradient(to right, #4b0082, #8a2be2);
+    /* Dark violet gradient */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 5rem;
+    /* Garde la hauteur de la navbar inchangée */
+}
+.user-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding-right: 4rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    flex-grow: 1;
+    text-align: center;
+    background: linear-gradient(to bottom, #e8c84c, #ffffff);
+    /* Golden to white gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    /* Prevent underline */
+}
+
+header .logo {
+    max-height: 4rem; /* Increase the maximum height */
+    height: auto;
+    margin-right: 0rem;
+}
+
+.search-bar {
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    background-color: #e5e5e5;
+    padding: 0.25rem 0.5rem;
+    /* Decrease padding to reduce searchbar height */
+    border-radius: 0.625rem;
+    margin-left: auto;
+    /* Align to the right */
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    padding: 0.25rem;
+    /* Decrease padding to reduce navbar height */
 }
