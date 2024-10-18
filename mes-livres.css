@@ -226,9 +226,7 @@ main {
   cursor: pointer;
 }
 
-
 /* Navigation */
-
 footer {
   width: 100%; /* Ensure the footer spans the full width */
   position: fixed;
@@ -243,15 +241,23 @@ footer nav {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  max-width: 600px; /* Adjust as needed */
+  max-width: 500px; /* Adjust as needed */
 }
 
 footer nav a {
   font-size: 1.5rem;
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
+footer nav a.active {
+  color: #fdd835;
+}
+
+footer nav a:hover {
+  color: #fdd835;
+}
 
 /* Responsive design */
 @media (min-width: 768px) {

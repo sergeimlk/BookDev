@@ -9,15 +9,18 @@ body {
     background-color: #f5f5f5;
     margin-top: 5rem;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem; /* Decrease padding to reduce navbar height */
-    background: linear-gradient(to right, #4b0082, #8a2be2); /* Dark violet gradient */
+    padding: 0.5rem 1rem;
+    /* Decrease padding to reduce navbar height */
+    background: linear-gradient(to right, #4b0082, #8a2be2);
+    /* Dark violet gradient */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
@@ -25,18 +28,21 @@ header {
     right: 0;
     width: 100%;
     z-index: 1000;
-    height: 5rem; /* Garde la hauteur de la navbar inchangée */
+    height: 5rem;
+    /* Garde la hauteur de la navbar inchangée */
 }
 
 header h1 {
     font-size: 2rem;
     flex-grow: 1;
     text-align: center;
-    background: linear-gradient(to bottom, #e8c84c, #ffffff); /* Golden to white gradient */
+    background: linear-gradient(to bottom, #e8c84c, #ffffff);
+    /* Golden to white gradient */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-decoration: none; /* Prevent underline */
+    text-decoration: none;
+    /* Prevent underline */
 }
 
 header .logo {
@@ -50,15 +56,18 @@ header .logo {
     display: flex;
     align-items: center;
     background-color: #e5e5e5;
-    padding: 0.25rem 0.5rem; /* Decrease padding to reduce searchbar height */
+    padding: 0.25rem 0.5rem;
+    /* Decrease padding to reduce searchbar height */
     border-radius: 0.625rem;
-    margin-left: auto; /* Align to the right */
+    margin-left: auto;
+    /* Align to the right */
 }
 
 .search-bar input {
     border: none;
     background: none;
-    padding: 0.25rem; /* Decrease padding to reduce navbar height */
+    padding: 0.25rem;
+    /* Decrease padding to reduce navbar height */
 }
 
 .carousel {
@@ -70,7 +79,9 @@ header .logo {
     gap: 1rem;
 }
 
-.carousel .activity-card, .carousel .book-card, .carousel .category-card {
+.carousel .activity-card,
+.carousel .book-card,
+.carousel .category-card {
     flex: 0 0 auto;
     scroll-snap-align: start;
     width: 200px;
@@ -82,69 +93,89 @@ header .logo {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.carousel .activity-card img, .carousel .book-card img, .carousel .category-card img {
+.carousel .activity-card img,
+.carousel .book-card img,
+.carousel .category-card img {
     width: 100%;
     height: auto;
     border-radius: 0.625rem;
 }
 
-.carousel .activity-card:hover, .carousel .book-card:hover, .carousel .category-card:hover {
-    transform: scale(1.1); /* Enlarge the card on hover */
-    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2); /* Add a larger shadow on hover */
+.carousel .activity-card:hover,
+.carousel .book-card:hover,
+.carousel .category-card:hover {
+    transform: scale(1.1);
+    /* Enlarge the card on hover */
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
+    /* Add a larger shadow on hover */
 }
 
+/* Navigation *//* Navigation */
 footer {
+    width: 100%; /* Ensure the footer spans the full width */
     position: fixed;
     bottom: 0;
-    width: 100%;
     background: linear-gradient(to right, #4b0082, #8a2be2); /* Dark violet gradient */
     padding: 1rem 0;
     display: flex;
     justify-content: center; /* Center the navbar */
-}
-
-footer nav {
+  }
+  
+  footer nav {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    max-width: 600px; /* Adjust as needed */
-}
-
-footer nav a {
+    max-width: 500px; /* Adjust as needed */
+  }
+  
+  footer nav a {
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
-}
-
-footer nav a.active {
-    color: #fdd835; /* Highlight the active link */
-}
+    transition: color 0.3s ease;
+  }
+  
+  footer nav a.active {
+    color: #fdd835;
+  }
+  
+  footer nav a:hover {
+    color: #fdd835;
+  }
 
 .recent-activities {
     padding: 1rem;
-    width: 100%; /* Make it responsive to the width of the screen */
+    width: 100%;
+    /* Make it responsive to the width of the screen */
     box-sizing: border-box;
 }
 
 .categories {
-    padding: 1rem 0; /* Ensure consistent padding, remove left and right padding */
-    width: 100%; /* Make it responsive to the width of the screen */
+    padding: 1rem 0;
+    /* Ensure consistent padding, remove left and right padding */
+    width: 100%;
+    /* Make it responsive to the width of the screen */
     box-sizing: border-box;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    gap: 1rem; /* Add gap between cards */
-    margin-left: 0; /* Ensure the carousel starts from the left edge */
+    gap: 1rem;
+    /* Add gap between cards */
+    margin-left: 0;
+    /* Ensure the carousel starts from the left edge */
 }
 
 .categories .category-card {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    width: 50rem; /* Make the category cards wider */
-    height: auto; /* Make the category cards rectangular */
+    width: 50rem;
+    /* Make the category cards wider */
+    height: auto;
+    /* Make the category cards rectangular */
     background-color: #fff;
-    padding: 1rem; /* Same padding as .activity-card */
+    padding: 1rem;
+    /* Same padding as .activity-card */
     border-radius: 0.625rem;
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -158,14 +189,18 @@ footer nav a.active {
 }
 
 .categories .category-card:hover {
-    transform: scale(1.1); /* Enlarge the card on hover */
-    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2); /* Add a larger shadow on hover */
+    transform: scale(1.1);
+    /* Enlarge the card on hover */
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
+    /* Add a larger shadow on hover */
 }
 
 @media (max-width: 1024px) {
     .categories .category-card {
-        width: 250px; /* Adjust width for smaller screens */
-        height: 150px; /* Adjust height for smaller screens */
+        width: 250px;
+        /* Adjust width for smaller screens */
+        height: 150px;
+        /* Adjust height for smaller screens */
     }
 }
 
@@ -188,7 +223,8 @@ footer nav a.active {
     }
 
     .categories .category-card {
-        width: 150px; /* Adjust width for smaller screens */
+        width: 150px;
+        /* Adjust width for smaller screens */
     }
 }
 
@@ -203,11 +239,13 @@ footer nav a.active {
 .title-link h1 {
     margin: 0;
     font-size: 2rem;
-    background: linear-gradient(to bottom, #e8c84c, #ffffff); /* Golden to white gradient */
+    background: linear-gradient(to bottom, #e8c84c, #ffffff);
+    /* Golden to white gradient */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-decoration: none; /* Prevent underline */
+    text-decoration: none;
+    /* Prevent underline */
 }
 
 .user-button {
@@ -222,7 +260,8 @@ footer nav a.active {
 .animated-icon {
     display: flex;
     align-items: center;
-    overflow: visible; /* Permet de dépasser si nécessaire */
+    overflow: visible;
+    /* Permet de dépasser si nécessaire */
 }
 
 @keyframes book-bounce {
@@ -271,14 +310,18 @@ footer nav a.active {
 
 .book-shelf {
     cursor: pointer;
-    transform: scale(2.5); /* Double la taille de l'icône */
-    transform-origin: center; /* Assure que l'agrandissement se fait depuis le centre */
+    transform: scale(2.5);
+    /* Double la taille de l'icône */
+    transform-origin: center;
+    /* Assure que l'agrandissement se fait depuis le centre */
 }
 
 .book-shelf:hover {
     cursor: pointer;
-    transform: scale(3); /* Double la taille de l'icône */
-    transform-origin: center; /* Assure que l'agrandissement se fait depuis le centre */
+    transform: scale(3);
+    /* Double la taille de l'icône */
+    transform-origin: center;
+    /* Assure que l'agrandissement se fait depuis le centre */
 }
 
 .book-shelf:hover .book-shelf__book {
