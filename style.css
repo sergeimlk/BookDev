@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
-    margin: 0;
+    margin-top: 5rem;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
@@ -25,7 +25,7 @@ header {
     right: 0;
     width: 100%;
     z-index: 1000;
-    height: 4rem; /* Garde la hauteur de la navbar inchangée */
+    height: 5rem; /* Modif la hauteur de la navbar inchangée */
 }
 
 header h1 {
