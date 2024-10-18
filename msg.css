@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    max-width: 100%; /* Ensure the container spans the full width */
+    margin: 0 auto;
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%; /* Ensure the header spans the full width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(to right, #4b0082, #8a2be2); /* Dark violet gradient */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    flex-grow: 1;
+    text-align: center;
+    background: linear-gradient(to bottom, #e8c84c, #ffffff); /* Golden to white gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none; /* Prevent underline */
+}
+
+
+.title-link {
+    text-decoration: none;
+    /* Remove underline */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title-link h1 {
+    margin: 0;
+    font-size: 2rem;
+    background: linear-gradient(to bottom, #e8c84c, #ffffff);
+    /* Golden to white gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    /* Prevent underline */
+}
+
+.title-msg {
+    margin-top: 0rem;
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center; /* Center the messages */
+}
+
+.message {
+    background-color: #e5e5e5;
+    padding: 1rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    width: 80%; /* Reduce the width of the message bubbles */
+    max-width: 600px; /* Set a maximum width */
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.sender {
+    font-weight: bold;
+}
+
+.timestamp {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.message-body {
+    font-size: 1rem;
+}
+
+.message-input {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #e5e5e5;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 60px; /* Adjust to be just above the footer */
+    width: calc(100% - 2rem); /* Adjust width to fit within the container */
+    margin: 0 1rem; /* Add margin to align with the container */
+}
+
+.message-input input {
+    flex-grow: 1;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.625rem;
+}
+
+.message-input button {
+    background: none;
+    border: none;
+    color: #4b0082;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Navigation */
+footer {
+    width: 100%; /* Ensure the footer spans the full width */
+    position: fixed;
+    bottom: 0;
+    background: linear-gradient(to right, #4b0082, #8a2be2); /* Dark violet gradient */
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center; /* Center the navbar */
+}
+
+footer nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 500px; /* Adjust as needed */
+}
+
+footer nav a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer nav a.active {
+    color: #fdd835;
+}
+
+footer nav a:hover {
+    color: #fdd835;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .carousel {
+        flex-direction: row;
+    }
+
+    .book-card {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .categories .category-card {
+        width: 150px;
+        /* Adjust width for smaller screens */
+    }
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    /* Decrease padding to reduce navbar height */
+    background: linear-gradient(to right, #4b0082, #8a2be2);
+    /* Dark violet gradient */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 5rem;
+    /* Garde la hauteur de la navbar inchangée */
+}
+.titre-msg {
+    position: absolute;
+    top: 1.2rem;
+    left: 10rem;
+}
+
+.user-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding-right: 4rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    flex-grow: 1;
+    text-align: center;
+    background: linear-gradient(to bottom, #e8c84c, #ffffff);
+    /* Golden to white gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    /* Prevent underline */
+}
+
+.search-bar {
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    background-color: #e5e5e5;
+    padding: 0.25rem 0.5rem;
+    /* Decrease padding to reduce searchbar height */
+    border-radius: 0.625rem;
+    margin-left: auto;
+    /* Align to the right */
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    padding: 0.25rem;
+    /* Decrease padding to reduce navbar height */
+}

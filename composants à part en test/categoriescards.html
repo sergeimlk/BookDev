@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories Cards</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"> -->
+</head>
+
+<body>
+    <div class="categ-card">
+        <div class="categ-img-container">
+            <img src="../IMG/joker.png" alt="Couverture du livre" class="categ-cover">
+        </div>
+        <div class="categ-title">THRILLER</div>
+    </div>
+</body>
+
+<style>
+    /* General card container */
+    .categ-card {
+        /* Violet gradient */
+        border-radius: 6.25rem 6.25rem 3.125rem 3.125rem; /* Plus arrondi sur le haut */
+        width: 25rem;
+        height: 18.75rem;
+        padding: 0.9375rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease;
+        position: relative;
+        overflow: hidden; /* Pour éviter que le contenu dépasse */
+    }
+
+    /* Hover effect */
+    .categ-card:hover {
+        transform: translateY(-0.625rem);
+    }
+
+    /* Image container */
+    .categ-img-container {
+        width: 100%;
+        height: 34.375rem;
+        position: absolute;
+        top: -6.25rem;
+        left: 0;
+        right: 0;
+    }
+
+    .categ-cover {
+        width: 100%;
+        height: 100%;
+        border-radius: 6.25rem 6.25rem 3.125rem 3.125rem;
+        object-fit: cover; /* Ensure the image covers the container without distortion */
+    }
+
+/* Title */
+.categ-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    font-size: 1.5rem; /* Adjust as needed */
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.734); /* Semi-transparent background */
+    padding: 0.5rem 1rem;
+    border-radius: 0.625rem; /* 10px */
+}
+</style>
+
+</html>
