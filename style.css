@@ -178,8 +178,9 @@ footer {
 
 .categories .category-card img {
     width: 100%;
-    height: auto;
-    border-radius: 0.625rem;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4rem;
 }
 
 .categories .category-card:hover {

@@ -12,7 +12,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #282c34;
+            background-color: #1a1a2e;
             color: white;
             font-family: Arial, sans-serif;
         }
@@ -20,22 +20,62 @@
         .container {
             text-align: center;
         }
+        
+        button {
+            font-size: 2rem;
+            padding: 1rem 2rem;
+            background-color: #0f3460;
+            color: white;
+            border: solid 2px #c307ba;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 20px;
+        }
+
+        button:hover {
+            background-color: #16213e;
+            border-radius: 100px;
+        }
 
         canvas {
-            border: 2px solid white;
+            border-radius: 80px;
+            border: solid 2px #c307ba;
             display: none;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            animation: fall 2s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <button onclick="startPongGame()" style="font-size: 2rem; padding-right: 2rem;">
+        <button onclick="startPongGame()">
             <i class="fa-solid fa-gamepad"></i> Lancer le jeu Pong
         </button>
         <canvas id="pongCanvas" width="800" height="400"></canvas>
     </div>
     <script>
+        let playerScore = 0;
+        let aiScore = 0;
+        const winningScore = 5;
+
         function startPongGame() {
             const canvas = document.getElementById('pongCanvas');
             const context = canvas.getContext('2d');
@@ -61,10 +101,12 @@
             }
 
             function draw() {
-                drawRect(0, 0, canvas.width, canvas.height, '#000');
-                drawRect(0, playerY, paddleWidth, paddleHeight, '#fff');
-                drawRect(canvas.width - paddleWidth, aiY, paddleWidth, paddleHeight, '#fff');
-                drawCircle(ballX, ballY, ballSize, '#fff');
+                drawRect(0, 0, canvas.width, canvas.height, 'rgba(0, 0, 0, 0.5)');
+                drawRect(0, playerY, paddleWidth, paddleHeight, '#e94560');
+                drawRect(canvas.width - paddleWidth, aiY, paddleWidth, paddleHeight, '#e94560');
+                drawCircle(ballX, ballY, ballSize, '#e94560');
+                context.fillText(`Player: ${playerScore}`, 50, 50);
+                context.fillText(`AI: ${aiScore}`, canvas.width - 100, 50);
             }
 
             function update() {
@@ -79,6 +121,7 @@
                     if (ballY > playerY && ballY < playerY + paddleHeight) {
                         ballSpeedX = -ballSpeedX;
                     } else {
+                        aiScore++;
                         resetBall();
                     }
                 }
@@ -87,11 +130,18 @@
                     if (ballY > aiY && ballY < aiY + paddleHeight) {
                         ballSpeedX = -ballSpeedX;
                     } else {
+                        playerScore++;
                         resetBall();
                     }
                 }
 
                 aiY += (ballY - (aiY + paddleHeight / 2)) * 0.1;
+
+                if (playerScore >= winningScore) {
+                    celebrateWin();
+                } else if (aiScore >= winningScore) {
+                    window.location.href = 'msg.html';
+                }
             }
 
             function resetBall() {
@@ -112,6 +162,19 @@
             });
 
             gameLoop();
+        }
+
+        function celebrateWin() {
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                document.body.appendChild(confetti);
+            }
+            setTimeout(() => {
+                document.querySelectorAll('.confetti').forEach(confetti => confetti.remove());
+            }, 3000);
         }
     </script>
 </body>
