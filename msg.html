@@ -11,9 +11,8 @@
 
 <body>
     <div class="container">
-
-        <header>
-            <div class="left-section">
+        <aside class="sidebar">
+            <header>
                 <a href="index.html">
                     <div class="animated-icon">
                         <svg class="book-shelf" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"
@@ -46,54 +45,184 @@
                         </svg>
                     </div>
                 </a>
-                <h1 class="titre-msg">Messages</h1>
-            </div>
-            <a href="index.html" class="title-link">
-                <h1>BIBLIOMANIAC</h1>
-            </a>
-            <div class="search-bar">
-                <input type="text" placeholder="Rechercher...">
-                <span class="search-icon">🔍</span>
-            </div>
-            <div>
-                <a href="user.html">
-                    <button class="user-button">
-                        <i class="fa-solid fa-user-circle"></i>
-                    </button>
-                </a>
-            </div>
-        </header>
 
-        <main>
-            <div class="messages">
-                <div class="message">
-                    <div class="message-header">
-                        <span class="sender">Alice</span>
-                        <span class="timestamp">10:30 AM</span>
-                    </div>
-                    <div class="message-body">
-                        Salut! Comment ça va? 😊
-                    </div>
+                <h1 class="titre-msg">Messages</h1>
+
+                <a href="index.html" class="title-link">
+                    <h1>BIBLIOMANIAC</h1>
+                </a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Rechercher...">
+                    <span class="search-icon">🔍</span>
                 </div>
-                <div class="message">
-                    <div class="message-header">
-                        <span class="sender">Bob</span>
-                        <span class="timestamp">10:32 AM</span>
-                    </div>
-                    <div class="message-body">
-                        Ça va bien, merci! Et toi? 😃
-                    </div>
+                <div>
+                    <a href="user.html">
+                        <button class="user-button">
+                            <i class="fa-solid fa-user-circle"></i>
+                        </button>
+                    </a>
                 </div>
-                <div class="message">
+            </header>
+
+
+            <ul class="conversation-list">
+                <li class="conversation-item">
+                    <img src="../IMG/kids.jpg" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Agnès</div>
+                        <div class="last-message">J'ai mangé une pizza entière toute seule! 🍕</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://picsum.photos/200/?random" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Lucio</div>
+                        <div class="last-message">J'ai adopté un chat et il s'appelle Spaghetti! 🐱</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/307" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Isabelle</div>
+                        <div class="last-message">J'ai peint un tableau de mon chien! 🎨</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/308" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Julien</div>
+                        <div class="last-message">J'ai fait un tour en montgolfière! 🎈</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/315" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Kévin</div>
+                        <div class="last-message">J'ai appris à jongler avec des oranges! 🍊</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://picsum.photos/200/200?grayscale" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Patrick</div>
+                        <div class="last-message">J'ai couru un marathon en pyjama! 🏃‍♂️</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/300" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Sophie</div>
+                        <div class="last-message">J'ai fait un gâteau en forme de licorne! 🦄</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/301" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Marie</div>
+                        <div class="last-message">J'ai vu un arc-en-ciel double aujourd'hui! 🌈</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/302" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Jean</div>
+                        <div class="last-message">J'ai appris à faire du skateboard! 🛹</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/303" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Claire</div>
+                        <div class="last-message">J'ai trouvé un trèfle à quatre feuilles! 🍀</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/304" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Pierre</div>
+                        <div class="last-message">J'ai fait du parapente pour la première fois! 🪂</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/305" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Sophie</div>
+                        <div class="last-message">J'ai appris à jouer du ukulélé! 🎸</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/306" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Antoine</div>
+                        <div class="last-message">J'ai fait du surf avec des dauphins! 🏄‍♂️</div>
+                    </div>
+                </li>
+
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/309" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Camille</div>
+                        <div class="last-message">J'ai appris à faire des sushis! 🍣</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/310" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Lucas</div>
+                        <div class="last-message">J'ai construit une cabane dans les arbres! 🌳</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/311" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Léa</div>
+                        <div class="last-message">J'ai fait du vélo toute la journée! 🚴‍♀️</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/312" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Théo</div>
+                        <div class="last-message">J'ai appris à faire des tours de magie! 🎩</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/313" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Manon</div>
+                        <div class="last-message">J'ai fait un marathon de films Disney! 🎬</div>
+                    </div>
+                </li>
+                <li class="conversation-item">
+                    <img src="https://i.pravatar.cc/314" alt="Avatar" class="avatar">
+                    <div class="conversation-info">
+                        <div class="conversation-name">Hugo</div>
+                        <div class="last-message">J'ai appris à faire des crêpes! 🥞</div>
+                    </div>
+                </li>
+            </ul>
+
+
+            </ul>
+        </aside>
+        <main class="chat-area">
+            <header class="chat-header">
+                <img src="../IMG/kids.jpg" alt="Avatar" class="avatar" style="width: 32px; height: 32px;">
+                <span class="conversation-name">Agnès</span>
+            </header>
+            <div class="chat-messages">
+
+                <div class="message received">
                     <div class="message-header">
                         <span class="sender">Agnès</span>
                         <span class="timestamp">10:35 AM</span>
                     </div>
                     <div class="message-body">
-                        Salut Sergei! J'ai réussi à coder un site en HTML, CSS et JS grâce au livre de Christophe et JB. 📘💻
+                        Salut Sergei! J'ai réussi à coder un site en HTML, CSS et JS grâce au livre de Christophe et JB.
+                        📘💻
                     </div>
                 </div>
-                <div class="message">
+                <div class="message sent">
                     <div class="message-header">
                         <span class="sender">Sergei</span>
                         <span class="timestamp">10:37 AM</span>
@@ -102,7 +231,7 @@
                         Vraiment? C'est génial! Quel est le titre du livre? 📚
                     </div>
                 </div>
-                <div class="message">
+                <div class="message received">
                     <div class="message-header">
                         <span class="sender">Agnès</span>
                         <span class="timestamp">10:40 AM</span>
@@ -111,7 +240,7 @@
                         Le livre s'appelle "Développez votre site web avec HTML, CSS et JavaScript". 🌐📖
                     </div>
                 </div>
-                <div class="message">
+                <div class="message sent">
                     <div class="message-header">
                         <span class="sender">Sergei</span>
                         <span class="timestamp">10:42 AM</span>
@@ -120,7 +249,7 @@
                         Ça a l'air intéressant. Tu le recommandes? 🤔
                     </div>
                 </div>
-                <div class="message">
+                <div class="message received">
                     <div class="message-header">
                         <span class="sender">Agnès</span>
                         <span class="timestamp">10:45 AM</span>
@@ -129,7 +258,7 @@
                         Oui, absolument! C'est un super livre, très bien expliqué. 👍📘
                     </div>
                 </div>
-                <div class="message">
+                <div class="message sent">
                     <div class="message-header">
                         <span class="sender">Sergei</span>
                         <span class="timestamp">10:47 AM</span>
@@ -138,7 +267,7 @@
                         Merci pour la recommandation. Je vais l'acheter. 🛒📚
                     </div>
                 </div>
-                <div class="message">
+                <div class="message received">
                     <div class="message-header">
                         <span class="sender">Agnès</span>
                         <span class="timestamp">10:50 AM</span>
@@ -147,7 +276,7 @@
                         De rien! Si tu as des questions, n'hésite pas à me demander. 😊
                     </div>
                 </div>
-                <div class="message">
+                <div class="message sent">
                     <div class="message-header">
                         <span class="sender">Sergei</span>
                         <span class="timestamp">10:52 AM</span>
@@ -156,7 +285,7 @@
                         Super, merci! Je te tiendrai au courant de mes progrès. 🚀
                     </div>
                 </div>
-                <div class="message">
+                <div class="message received">
                     <div class="message-header">
                         <span class="sender">Agnès</span>
                         <span class="timestamp">10:55 AM</span>
@@ -166,21 +295,21 @@
                     </div>
                 </div>
             </div>
-            <div class="message-input">
-                <input type="text" placeholder="Écrire un message...">
+            <div class="chat-input">
+                <button onclick="startPongGame()" style="font-size: 2rem; padding-right: 2rem;"><i class="fa-solid fa-gamepad"></i></button>
+                <input type="text" placeholder="Écrivez un message...">
                 <button><i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </main>
-
-        <footer>
-            <nav>
-                <a href="index.html"><i class="fa-solid fa-book-open"></i></a>
-                <a href="mes-livres.html"><i class="fa-solid fa-bookmark"></i></a>
-                <a href="msg.html" class="active"><i class="fa-solid fa-comment"></i></a>
-                <a href="user.html"><i class="fa-solid fa-circle-user"></i></a>
-            </nav>
-        </footer>
     </div>
+    <footer>
+        <nav>
+            <a href="index.html" class="active"><i class="fa-solid fa-book-open"></i></a>
+            <a href="mes-livres.html"><i class="fa-solid fa-bookmark"></i></a>
+            <a href="msg.html"><i class="fa-solid fa-comment"></i></a>
+            <a href="user.html"><i class="fa-solid fa-circle-user"></i></a>
+        </nav>
+    </footer>
 </body>
 
 </html>

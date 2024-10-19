@@ -4,27 +4,88 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
 header {
     width: 100%; /* Ensure the header spans the full width */
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the content */
     align-items: center;
-    padding: 1rem;
+    padding: 0.25rem; /* Reduce the padding to reduce the height by 50% */
     background: linear-gradient(to right, #4b0082, #8a2be2); /* Dark violet gradient */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 header h1 {
     font-size: 2rem;
-    flex-grow: 1;
-    text-align: center;
+    text-align: center; /* Center the text */
     background: linear-gradient(to bottom, #e8c84c, #ffffff); /* Golden to white gradient */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none; /* Prevent underline */
+    margin: 0;
+}
+
+.title-link {
+    text-decoration: none;
+    position: static; /* Remove absolute positioning */
+    transform: none; /* Remove transform */
+    margin: 0 auto; /* Center the title link */
+}
+
+.title-msg {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 1rem; /* Add space between title-msg and title-link */
+}
+
+.search-bar {
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    background-color: #e5e5e5;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.625rem;
+    margin-left: auto;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    padding: 0.25rem;
+}
+
+.user-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding-right: 4rem;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title-link {
+        position: static;
+        transform: none;
+        margin-bottom: 1rem;
+    }
+
+    .search-bar {
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .user-button {
+        padding-right: 0;
+    }
 }
 
 body {
@@ -94,8 +155,8 @@ body {
 }
 
 .avatar {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     margin-bottom: 8px;
 }
@@ -167,7 +228,6 @@ body {
     color: #fff;
     align-self: flex-end;
 }
-
 .chat-input {
     padding: 20px;
     border-top: 1px solid #dbdbdb;
@@ -175,7 +235,7 @@ body {
     align-items: center;
     position: fixed;
     bottom: 60px; /* Position above the footer */
-    width: calc(100% - 40px); /* Adjust width to fit within the container */
+    width: 100%; /* Ensure the chat input spans the full width */
     background-color: #fff;
 }
 
