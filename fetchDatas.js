@@ -78,7 +78,7 @@ getData().then((data) => {
 
       const bookPrice = document.createElement("div");
       bookPrice.classList.add("book-price");
-      bookPrice.textContent = `$${book.price}`;
+      bookPrice.textContent = `${book.price}`;
 
       const bookmark = document.createElement("div");
       bookmark.classList.add("bookmark");
