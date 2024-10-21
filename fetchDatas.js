@@ -22,6 +22,7 @@ getData().then((data) => {
   const isIndexPage = document.querySelector(".popular"); // Check si on est sur index.html
   const isMesLivresPage = document.getElementById("book-list"); // Check si on est sur mes-livres.html
   const isBookDetailsPage = document.getElementById("bookDetails-container"); // Check si on est sur bookDetails.html
+  const isAuthorPage = document.getElementById("author-container"); // Check si on est sur author.html
 
   //PAGE INDEX --- HOME
   if (isIndexPage) {
