@@ -47,8 +47,11 @@
           >
         </div>
         <div id="main-container">
+          <!-- ciblage bookDetails-container en tant que conteneur principal pour fetchDatas.js (const bookDetailsContainer)-->
           <div id="bookDetails-container">
-            <div id="book-details">
+            <!-- creation des elements par fetchDatas.js pour la modif du dom (innerHTML etc...) img titre autur date stars -->
+
+            <!-- <div id="book-details">
               <h3 class="details-title">Titre du livre</h3>
               <span class="book-info">
                 <p class="book-author">Auteur</p>
@@ -64,7 +67,7 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </span>
-            </div>
+            </div> -->
           </div>
           <section
             class="nav-about"
@@ -73,13 +76,19 @@
             <a href="#" class="active-page" aria-label="À propos de ce livre"
               >À propos de ce livre</a
             >
-            <a href="#" class="nav-link" aria-label="Informations sur l'auteur"
+            <!-- modif du dom par fetchDatas.js pour le lien vers authorDetails.html (link-author)-->
+            <a
+              href="authorDetails.html"
+              class="nav-link"
+              id="link-author"
+              aria-label="Informations sur l'auteur"
               >L'auteur</a
             >
             <a href="#" class="nav-link" aria-label="Lire les critiques"
               >Critiques</a
             >
           </section>
+
           <div class="about-container">
             <section class="about">
               <h2>À propos de cet e-book</h2>

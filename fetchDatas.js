@@ -10,6 +10,7 @@ async function getData() {
 }
 
 getData().then((data) => {
+  // recup l id dans l'url pour afficher les datas
   const queryString_url_id = window.location.search;
   console.log("id dans l'url", queryString_url_id);
 
@@ -17,16 +18,20 @@ getData().then((data) => {
   console.log("object url params", urlParams);
   const theId = urlParams.get("id");
   console.log("the id", theId);
+  // Convertir theId en nombre pour la comparaison
+  const numericId = Number(theId);
 
   // Vérifier sur quelle page on est
   const isIndexPage = document.querySelector(".popular"); // Check si on est sur index.html
-  const isMesLivresPage = document.getElementById("book-list"); // Check si on est sur mes-livres.html
+  const isMesLivresPage = document.getElementById("book-details"); // Check si on est sur mes-livres.html
   const isBookDetailsPage = document.getElementById("bookDetails-container"); // Check si on est sur bookDetails.html
-  const isAuthorPage = document.getElementById("author-container"); // Check si on est sur author.html
+  const isAuthorPage = document.getElementById("author-main-container"); // Check si on est sur author.html
 
   //PAGE INDEX --- HOME
   if (isIndexPage) {
+    // ciblage du conteneur Popular et carousel
     const popularContainer = document.querySelector(".popular .carousel");
+    //et vider le contenu déjà présnt (normalemnt il n'y a rien j'ai déjà vidé le contenu en html)
     popularContainer.innerHTML = "";
 
     data.books.forEach((book) => {
@@ -50,20 +55,26 @@ getData().then((data) => {
       bookRating.classList.add("book-rating");
       bookRating.textContent = book.rating;
 
-      // add les éléments au bookCard
-      bookCard.appendChild(bookImage);
-      bookCard.appendChild(bookTitle);
-      bookCard.appendChild(bookAuthor);
-      bookCard.appendChild(bookPrice);
-      bookCard.appendChild(bookRating);
+      const bookLink = document.createElement("a");
+      bookLink.href = `bookDetails.html?id=${book.id}`;
 
-      // add la bookCard au conteneur "Populaire"
+      //add les elts au bookLink
+      bookLink.appendChild(bookImage);
+      bookLink.appendChild(bookTitle);
+      bookLink.appendChild(bookAuthor);
+      bookLink.appendChild(bookPrice);
+      bookLink.appendChild(bookRating);
+      //add bookCard au bookLink
+      bookCard.appendChild(bookLink);
+      //add bookCard au conteneur "Populaire"
       popularContainer.appendChild(bookCard);
     });
   }
   //PAGE MES LIVRES --TOUS LES LIVRES
   else if (isMesLivresPage) {
+    // ciblage du conteneur book-list
     const bookListContainer = document.getElementById("book-list");
+    // vidage du contenu déjà présent (normalement il n'y a rien j'ai déjà vidé le contenu en html)
     bookListContainer.innerHTML = "";
 
     data.books.forEach((book) => {
@@ -110,12 +121,14 @@ getData().then((data) => {
   }
   //PAGE DETAILS DU LIVRE -- BOOK DETAILS
   if (isBookDetailsPage) {
-    const bookDetailsContainer = document.getElementById("book-details");
+    // ciblage du conteneur bookDetails-container
+    const bookDetailsContainer = document.getElementById(
+      "bookDetails-container"
+    );
+    // vidage du contenu déjà présent (normalement il n'y a rien j'ai déjà vidé le contenu en html)
+    bookDetailsContainer.innerHTML = "";
     console.log("hello from book details page");
     console.log("datas de book details", data);
-
-    // Convertir theId en nombre pour la comparaison
-    const numericId = Number(theId);
 
     const selectedBook = data.books.find((book) => book.id === numericId);
     console.log("hello");
@@ -124,6 +137,7 @@ getData().then((data) => {
     if (selectedBook) {
       if (selectedBook) {
         bookDetailsContainer.innerHTML = `
+          <img src="${selectedBook.image}" alt="${selectedBook.title}" />
           <h3 class="details-title">${selectedBook.title}</h3>
           <span class="book-info">
             <p class="book-author"> ${selectedBook.author}</p>
@@ -138,14 +152,13 @@ getData().then((data) => {
           </span>
         `;
 
-        const bookCoverImage = document.createElement("img");
-        bookCoverImage.src = selectedBook.image;
-        bookCoverImage.alt = selectedBook.title;
+        const linkAuthor = document.getElementById("link-author");
+        linkAuthor.href = `authorDetails.html?id=${selectedBook.id}`;
 
-        const bookDetailsContainerMain = document.getElementById(
-          "bookDetails-container"
-        );
-        bookDetailsContainerMain.prepend(bookCoverImage);
+        // const bookDetailsContainerMain = document.getElementById(
+        //   "bookDetails-container"
+        // );
+        // bookDetailsContainerMain.prepend(bookCoverImage);
 
         const aboutContainer = document.querySelector(
           ".about-container .about"
@@ -157,6 +170,36 @@ getData().then((data) => {
         `;
       }
       console.log("Livre non trouvé");
+    }
+  }
+  //PAGE AUTEUR -- AUTHOR
+  if (isAuthorPage) {
+    const authorContainer = document.getElementById("author-details");
+    const aboutContainer = document.querySelector(".about-container");
+    console.log("hello from author page");
+    console.log("datas de author", data);
+    // Convertir theId en nombre pour la comparaison
+    // const numericId = Number(theId);
+
+    const selectedAuthor = data.books.find((book) => book.id === numericId);
+    console.log("hello");
+
+    const authorName = selectedAuthor.author;
+    console.log("Nom de l'auteur : ", authorName);
+
+    if (selectedAuthor) {
+      authorContainer.innerHTML = `
+        <h3 class="details-title">${selectedAuthor.author}</h3>
+        <span class="author-info">
+          <p class="book-author"> <i class="fa-solid fa-book-open" aria-hidden="true"></i> ${selectedAuthor.numberOfBooks} books </p>
+
+      `;
+      aboutContainer.innerHTML = `
+      <br />
+        <h2>À propos de cet auteur</h2>
+        <br />
+        <p>${selectedAuthor.aboutAuthor}</p>
+      `;
     }
   } else {
     console.log("erreur !!");

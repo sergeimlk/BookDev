@@ -43,26 +43,29 @@
         <span> > </span>
         <a href="bookDetails.html">Titre du livre</a>
       </div>
-      <div class="main-container">
-        <div class="authorDetails-container">
+      <!-- ciblage author-main-container en tant que conteneur principal pour fetchDatas.js -->
+      <div id="author-main-container" class="main-container">
+        <div id="authorDetails-container" class="authorDetails-container">
           <img
             src="https://avatar.iran.liara.run/public"
             alt="Photo de profil de l'auteur"
             class="author-pix"
             aria-label="Image de l'auteur"
           />
-          <div class="author-details">
-            <h3 class="details-title">Nom de l'auteur</h3>
-            <span class="author-info">
+          <!-- ciblage author-details pour fetchDatas.js pour la modif du dom (innerHTML etc...)-->
+          <div id="author-details" class="author-details">
+            <!-- crééé par fetchDatas.js -->
+            <!-- <h3 class="details-title">Nom de l'auteur</h3> -->
+            <!-- <span class="author-info">
               <i class="fa-solid fa-book-open" aria-hidden="true"></i>
               <p
                 class="book-author"
                 aria-label="Nombre de livres écrits par l'auteur"
               >
                 10 livres
-              </p>
-            </span>
-            <span
+              </p> 
+            </span> -->
+            <!-- <span
               class="solid-stars"
               aria-label="Évaluation de l'auteur : 5 étoiles"
             >
@@ -71,7 +74,7 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
-            </span>
+            </span> -->
           </div>
         </div>
         <section
@@ -79,7 +82,7 @@
           aria-label="Navigation dans les sections d'information sur l'auteur"
         >
           <a
-            href="bookDetails.html"
+            href="authorDetails.html?id=${id}"
             class="nav-link"
             aria-label="À propos de ce livre"
             >À propos de ce livre</a
@@ -94,11 +97,13 @@
             >Critiques</a
           >
         </section>
-        <div class="about-container">
+        <!-- ciblage about-container pour fetchDatas.js -->
+        <div id="about-container" class="about-container">
           <section class="about">
-            <h2>À propos de cet auteur</h2>
+            <!-- créee par fetchDatas.js -->
+            <!-- <h2>À propos de cet auteur</h2>
             <br />
-            <p>
+            <p class="author-bio">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -113,7 +118,7 @@
               eros ut tristique. Praesent elementum consequat quam, et porttitor
               purus pharetra sit amet. Vestibulum tempus dui quis odio eleifend
               faucibus.
-            </p>
+            </p> -->
           </section>
         </div>
       </div>
