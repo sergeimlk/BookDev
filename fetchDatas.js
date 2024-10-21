@@ -131,6 +131,7 @@ getData().then((data) => {
       // Ajouter la carte complète au container
       bookListContainer.appendChild(bookDiv);
     });
+  }
 
   //PAGE DETAILS DU LIVRE -- BOOK DETAILS
   if (isBookDetailsPage) {
