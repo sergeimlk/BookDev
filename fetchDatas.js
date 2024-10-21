@@ -55,7 +55,7 @@ getData().then((data) => {
 
       const bookRating = document.createElement("div");
       bookRating.classList.add("book-rating");
-      bookRating.textContent = book.rating;
+      bookRating.textContent = `${"★".repeat(book.rating)}`;
 
       const bookLink = document.createElement("a");
       bookLink.href = `bookDetails.html?id=${book.id}`;

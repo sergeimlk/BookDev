@@ -104,38 +104,52 @@ header h1 {
     /* Add a larger shadow on hover */
 }
 
-/* Navigation *//* Navigation */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.book-rating {
+    color: #fdd835;
+}
+
+/* Navigation */
+/* Navigation */
 footer {
-    width: 100%; /* Ensure the footer spans the full width */
+    width: 100%;
+    /* Ensure the footer spans the full width */
     position: fixed;
     bottom: 0;
-    background: linear-gradient(to right, #4b0082, #8a2be2); /* Dark violet gradient */
+    background: linear-gradient(to right, #4b0082, #8a2be2);
+    /* Dark violet gradient */
     padding: 1rem 0;
     display: flex;
-    justify-content: center; /* Center the navbar */
-  }
-  
-  footer nav {
+    justify-content: center;
+    /* Center the navbar */
+}
+
+footer nav {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    max-width: 500px; /* Adjust as needed */
-  }
-  
-  footer nav a {
+    max-width: 500px;
+    /* Adjust as needed */
+}
+
+footer nav a {
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
-  }
-  
-  footer nav a.active {
+}
+
+footer nav a.active {
     color: #fdd835;
-  }
-  
-  footer nav a:hover {
+}
+
+footer nav a:hover {
     color: #fdd835;
-  }
+}
 
 .recent-activities {
     padding: 1rem;
