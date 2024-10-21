@@ -16,7 +16,7 @@ body {
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%) scale(0.8); /* Adjust position to truly center and scale down */
-    margin-top: 35rem; /* Add top margin to center */
+    margin-top: 32rem; /* Add top margin to center */
     backdrop-filter: blur(4px); /* Add blur effect for glass mode */
     -webkit-backdrop-filter: blur(10px); /* Add blur effect for Safari */
     border: 1px solid white; /* Add white border */

@@ -122,7 +122,7 @@ getData().then((data) => {
 
     const bookPrice = document.createElement("div");
     bookPrice.classList.add("book-price");
-    bookPrice.textContent = `$${book.price}`;
+    bookPrice.textContent = `${book.price}`;
 
     const bookDescription = document.createElement("div");
     bookDescription.classList.add("book-description");

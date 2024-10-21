@@ -164,7 +164,7 @@ footer {
     flex: 0 0 auto;
     scroll-snap-align: start;
     width: 25rem;
-    height: 18.75rem;
+    height: 15rem;
     background-color: #fff;
     padding: 0.9375rem;
     border-radius: 6.25rem 6.25rem 3.125rem 3.125rem; /* Plus arrondi sur le haut */
@@ -184,7 +184,7 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4rem;
+    border-radius: 6.25rem 6.25rem 3.125rem 3.125rem; /* Plus arrondi sur le haut */
     flex-grow: 1;
 }
 

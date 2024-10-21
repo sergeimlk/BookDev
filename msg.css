@@ -158,8 +158,9 @@ body {
 }
 
 .conversation-name {
+    font-size: 20px;
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-left: 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -189,11 +190,13 @@ body {
     border-bottom: 1px solid #dbdbdb;
     display: flex;
     align-items: center;
+    justify-content: flex-start; /* Align content to the left */
     background-color: #4b0082;
     color: #fff;
 }
 
 .chat-messages {
+    margin-bottom: 4rem;
     flex-grow: 1;
     padding: 20px;
     overflow-y: auto;
