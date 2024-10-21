@@ -14,6 +14,14 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
 }
+.back-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding-left: 1rem;
+  }
 
 header h1 {
     font-size: 2rem;
@@ -24,20 +32,26 @@ header h1 {
     -webkit-text-fill-color: transparent;
     text-decoration: none; /* Prevent underline */
     margin: 0;
+    flex-grow: 1; /* Allow the title to take up available space */
 }
 
 .title-link {
+    padding-left: 5rem;
     text-decoration: none;
-    position: static; /* Remove absolute positioning */
+    position: absolute; /* Position the title-link absolutely */
+    left: 1rem; /* Align to the left of the header */
     transform: none; /* Remove transform */
-    margin: 0 auto; /* Center the title link */
+    margin: 0; /* Remove margin */
 }
 
 .title-msg {
     margin-top: 0;
     display: flex;
     align-items: center;
-    margin-right: 1rem; /* Add space between title-msg and title-link */
+    justify-content: center; /* Center the title-msg */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Center the title-msg horizontally */
 }
 
 .search-bar {
@@ -89,7 +103,7 @@ header h1 {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #fafafa;
     color: #262626;
 }
