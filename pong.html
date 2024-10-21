@@ -61,31 +61,94 @@
                 transform: translateY(100vh);
             }
         }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .difficulty-select {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            background-color: #0f3460;
+            color: white;
+            border: solid 2px #c307ba;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            appearance: none; /* Remove default styling */
+            -webkit-appearance: none; /* Remove default styling for Safari */
+            -moz-appearance: none; /* Remove default styling for Firefox */
+            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="white" d="M2 0L0 2h4zM2 5L0 3h4z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 0.5rem top 50%;
+            background-size: 0.65rem auto;
+        }
+
+        .difficulty-select:hover {
+            background-color: #16213e;
+            border-color: #e94560;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <button onclick="startPongGame()">
-            <i class="fa-solid fa-gamepad"></i> Lancer le jeu Pong
-        </button>
+        <div class="menu">
+            <select class="difficulty-select" id="difficulty">
+                <option value="easy">Facile</option>
+                <option value="medium">Moyen</option>
+                <option value="hard">Difficile</option>
+            </select>
+            <button onclick="startPongGame()">Lancer le jeu Pong</button>
+            <div class="controls">
+                <button onclick="pauseGame()">Pause</button>
+                <button onclick="resumeGame()">Play</button>
+            </div>
+        </div>
         <canvas id="pongCanvas" width="800" height="400"></canvas>
     </div>
     <script>
         let playerScore = 0;
         let aiScore = 0;
         const winningScore = 5;
+        let gamePaused = false;
+        let playerY = 0;
+        let aiY = 0;
+        let ballX = 0;
+        let ballY = 0;
+        let ballSpeedX = 5;
+        let ballSpeedY = 5;
+        let paddleHeight = 100;
+        let paddleWidth = 10;
+        let ballSize = 10;
+        let difficulty = 'medium';
+        let aiSpeed = 0.1;
 
         function startPongGame() {
             const canvas = document.getElementById('pongCanvas');
             const context = canvas.getContext('2d');
             canvas.style.display = 'block';
 
-            const paddleWidth = 10, paddleHeight = 100, ballSize = 10;
-            let playerY = canvas.height / 2 - paddleHeight / 2;
-            let aiY = canvas.height / 2 - paddleHeight / 2;
-            let ballX = canvas.width / 2, ballY = canvas.height / 2;
-            let ballSpeedX = 5, ballSpeedY = 5;
+            difficulty = document.getElementById('difficulty').value;
+            switch (difficulty) {
+                case 'easy':
+                    aiSpeed = 0.05;
+                    break;
+                case 'medium':
+                    aiSpeed = 0.1;
+                    break;
+                case 'hard':
+                    aiSpeed = 0.2;
+                    break;
+            }
+
+            playerY = canvas.height / 2 - paddleHeight / 2;
+            aiY = canvas.height / 2 - paddleHeight / 2;
+            ballX = canvas.width / 2;
+            ballY = canvas.height / 2;
 
             function drawRect(x, y, width, height, color) {
                 context.fillStyle = color;
@@ -110,6 +173,8 @@
             }
 
             function update() {
+                if (gamePaused) return;
+
                 ballX += ballSpeedX;
                 ballY += ballSpeedY;
 
@@ -135,7 +200,7 @@
                     }
                 }
 
-                aiY += (ballY - (aiY + paddleHeight / 2)) * 0.1;
+                aiY += (ballY - (aiY + paddleHeight / 2)) * aiSpeed;
 
                 if (playerScore >= winningScore) {
                     celebrateWin();
@@ -161,7 +226,24 @@
                 playerY = event.clientY - rect.top - paddleHeight / 2;
             });
 
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowUp') {
+                    playerY -= 20;
+                } else if (event.key === 'ArrowDown') {
+                    playerY += 20;
+                }
+            });
+
             gameLoop();
+        }
+
+        function pauseGame() {
+            gamePaused = true;
+        }
+
+        function resumeGame() {
+            gamePaused = false;
+            requestAnimationFrame(startPongGame);
         }
 
         function celebrateWin() {

@@ -51,22 +51,31 @@ getData().then((data) => {
       // add la bookCard au conteneur "Populaire"
       popularContainer.appendChild(bookCard);
     });
-  } else if (isMesLivresPage) {
+  } 
+  
+  else if (isMesLivresPage) {
     // On est sur mes-livres.html, on affiche les livres dans la liste des livres
     const bookListContainer = document.getElementById("book-list");
     bookListContainer.innerHTML = "";
 
     data.books.forEach((book) => {
+      // Créer la div principale pour chaque livre
       const bookDiv = document.createElement("div");
       bookDiv.classList.add("book");
+
+      // Div pour l'image du livre
+      const bookImageDiv = document.createElement("div");
+      bookImageDiv.classList.add("book-image");
 
       const bookImage = document.createElement("img");
       bookImage.src = book.image;
       bookImage.alt = book.title;
+      // Ajouter l'image dans sa div
+      bookImageDiv.appendChild(bookImage);
 
-      const bookRating = document.createElement("div");
-      bookRating.classList.add("book-rating");
-      bookRating.textContent = `${"★".repeat(book.rating)} Note`;
+      // Div pour les informations textuelles du livre
+      const bookInfosDiv = document.createElement("div");
+      bookInfosDiv.classList.add("book-infos-container");
 
       const bookTitle = document.createElement("div");
       bookTitle.classList.add("book-title");
@@ -76,6 +85,10 @@ getData().then((data) => {
       bookAuthor.classList.add("book-author");
       bookAuthor.textContent = book.author;
 
+      const bookRating = document.createElement("div");
+      bookRating.classList.add("book-rating");
+      bookRating.textContent = `${"★".repeat(book.rating)} Note`;
+
       const bookPrice = document.createElement("div");
       bookPrice.classList.add("book-price");
       bookPrice.textContent = `${book.price}`;
@@ -84,15 +97,21 @@ getData().then((data) => {
       bookmark.classList.add("bookmark");
       bookmark.innerHTML = "&#9733;";
 
-      bookDiv.appendChild(bookImage);
-      bookDiv.appendChild(bookRating);
-      bookDiv.appendChild(bookTitle);
-      bookDiv.appendChild(bookAuthor);
-      bookDiv.appendChild(bookPrice);
-      bookDiv.appendChild(bookmark);
+      // Ajouter les infos textuelles dans la div des infos
+      bookInfosDiv.appendChild(bookTitle);
+      bookInfosDiv.appendChild(bookAuthor);
+      bookInfosDiv.appendChild(bookRating);
+      bookInfosDiv.appendChild(bookPrice);
+      bookInfosDiv.appendChild(bookmark);
 
+      // Ajouter l'image et les infos dans la carte principale
+      bookDiv.appendChild(bookImageDiv);
+      bookDiv.appendChild(bookInfosDiv);
+
+      // Ajouter la carte complète au container
       bookListContainer.appendChild(bookDiv);
     });
+
   } else if (bookDetailsPage) {
     // On est sur bookDetails.html, on affiche les détails du livre
     const bookId = new URLSearchParams(window.location.search).get("id");

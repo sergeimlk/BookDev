@@ -11,58 +11,50 @@
   </style>
 </head>
 
+
+
 <body>
   <div class="container">
+    
     <header>
       <a href="index.html" aria-label="Retour à la page d'accueil">
-        <button class="back-button" aria-label="Retour">
-          <i class="fa-solid fa-circle-chevron-left"></i>
-        </button>
-
-        <a href="index.html" class="title-link">
-          <h1>BIBLIOMANIAC</h1>
-        </a>
+          <button class="back-button" aria-label="Retour">
+              <i class="fa-solid fa-circle-chevron-left"></i>
+          </button>
       </a>
-      <h1 class="mes-livres">Mes livres</h1>
+      <h1 class="titre-msg">Mes Livres</h1>
+
 
       <div class="search-bar">
-        <input type="text" placeholder="Rechercher...">
-        <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Rechercher...">
+          <span class="search-icon">🔍</span>
       </div>
       <div>
-        <a href="user.html">
-          <button class="user-button">
-            <i class="fa-solid fa-user-circle"></i>
-          </button>
-        </a>
+          <a href="user.html">
+              <button class="user-button">
+                  <i class="fa-solid fa-user-circle"></i>
+              </button>
+          </a>
       </div>
-    </header>
-    <div class="container">
-      <div class="tabs toggle" aria-label="Choisir entre les livres favoris et téléchargés">
-        <input type="radio" id="fav" name="tab" checked />
-        <label for="fav" class="tab" aria-label="Voir les livres favoris">Favoris</label>
-        <input type="radio" id="downloaded" name="tab" />
-        <label for="downloaded" class="tab" aria-label="Voir les livres téléchargés">Téléchargés</label>
-        <div id="flap" aria-hidden="true">
-          <span class="content">Favoris</span>
+  </header>
+
+
+
+  
+  
+
+
+   <main aria-label="Liste des livres">
+  <div class="book-list" id="book-list" aria-label="Liste des livres favoris et téléchargés">
+    <div class="book-card">
+      <div class="book-img-container">
+        <img src="../IMG/metamo.png" alt="The Metamorphosis" class="book-cover">
+      </div>
+      <div class="book-info">
+        <div class="book-title-container">
+          <div class="book-title">The Metamorphosis</div>
+          <button class="read-button">Read</button>
         </div>
-      </div>
-    </div>
-
-    <main aria-label="Liste des livres">
-      <div class="book-list" id="book-list" aria-label="Liste des livres favoris et téléchargés">
-        <div class="book-card">
-
-
-          <div class="book-img-container">
-            
-            <img src="../IMG/metamo.png" alt="The Metamorphosis">
-          </div>
-          <div class="book-info">
-            <div class="book-title-container">
-              <div class="book-title">The Metamorphosis</div>
-              <button class="read-button">Read</button>
-            </div>
             <div class="book-author">Franz Kafka - 1915</div>
           </div>
           <div class="book-info">
