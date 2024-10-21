@@ -74,22 +74,28 @@ getData().then((data) => {
   }
   //PAGE MES LIVRES --TOUS LES LIVRES
   else if (isMesLivresPage) {
-    // ciblage du conteneur book-list
+    // On est sur mes-livres.html, on affiche les livres dans la liste des livres
     const bookListContainer = document.getElementById("book-list");
-    // vidage du contenu déjà présent (normalement il n'y a rien j'ai déjà vidé le contenu en html)
     bookListContainer.innerHTML = "";
 
     data.books.forEach((book) => {
+      // Créer la div principale pour chaque livre
       const bookDiv = document.createElement("div");
       bookDiv.classList.add("book");
+
+      // Div pour l'image du livre
+      const bookImageDiv = document.createElement("div");
+      bookImageDiv.classList.add("book-image");
 
       const bookImage = document.createElement("img");
       bookImage.src = book.image;
       bookImage.alt = book.title;
+      // Ajouter l'image dans sa div
+      bookImageDiv.appendChild(bookImage);
 
-      const bookRating = document.createElement("div");
-      bookRating.classList.add("book-rating");
-      bookRating.textContent = `${"★".repeat(book.rating)} Note`;
+      // Div pour les informations textuelles du livre
+      const bookInfosDiv = document.createElement("div");
+      bookInfosDiv.classList.add("book-infos-container");
 
       const bookTitle = document.createElement("div");
       bookTitle.classList.add("book-title");
@@ -99,28 +105,33 @@ getData().then((data) => {
       bookAuthor.classList.add("book-author");
       bookAuthor.textContent = book.author;
 
+      const bookRating = document.createElement("div");
+      bookRating.classList.add("book-rating");
+      bookRating.textContent = `${"★".repeat(book.rating)} Note`;
+
       const bookPrice = document.createElement("div");
       bookPrice.classList.add("book-price");
-      bookPrice.textContent = `$${book.price}`;
+      bookPrice.textContent = `${book.price}`;
 
       const bookmark = document.createElement("div");
       bookmark.classList.add("bookmark");
       bookmark.innerHTML = "&#9733;";
 
-      const bookLink = document.createElement("a");
-      bookLink.href = `bookDetails.html?id=${book.id}`;
+      // Ajouter les infos textuelles dans la div des infos
+      bookInfosDiv.appendChild(bookTitle);
+      bookInfosDiv.appendChild(bookAuthor);
+      bookInfosDiv.appendChild(bookRating);
+      bookInfosDiv.appendChild(bookPrice);
+      bookInfosDiv.appendChild(bookmark);
 
-      bookLink.appendChild(bookImage);
-      bookLink.appendChild(bookRating);
-      bookLink.appendChild(bookTitle);
-      bookLink.appendChild(bookAuthor);
-      bookLink.appendChild(bookPrice);
-      bookLink.appendChild(bookmark);
+      // Ajouter l'image et les infos dans la carte principale
+      bookDiv.appendChild(bookImageDiv);
+      bookDiv.appendChild(bookInfosDiv);
 
-      bookDiv.appendChild(bookLink);
+      // Ajouter la carte complète au container
       bookListContainer.appendChild(bookDiv);
     });
-  }
+
   //PAGE DETAILS DU LIVRE -- BOOK DETAILS
   if (isBookDetailsPage) {
     // ciblage du conteneur bookDetails-container
