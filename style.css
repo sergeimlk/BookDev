@@ -19,7 +19,7 @@ header {
     align-items: center;
     padding: 0.5rem 1rem;
     /* Decrease padding to reduce navbar height */
-    background: linear-gradient(to right, #4b0082, #8a2be2);
+    background: linear-gradient(to right, #4D3857, #3d1e54);
     /* Dark violet gradient */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -36,7 +36,7 @@ header h1 {
     font-size: 2rem;
     flex-grow: 1;
     text-align: center;
-    background: linear-gradient(to bottom, #e8c84c, #ffffff);
+    background: linear-gradient(to bottom, #f7c648, #ffffff);
     /* Golden to white gradient */
     background-clip: text;
     -webkit-background-clip: text;
@@ -109,7 +109,7 @@ footer {
     width: 100%; /* Ensure the footer spans the full width */
     position: fixed;
     bottom: 0;
-    background: linear-gradient(to right, #4b0082, #8a2be2); /* Dark violet gradient */
+    background: linear-gradient(to right, #4D3857, #3d1e54); /* Dark violet gradient */
     padding: 1rem 0;
     display: flex;
     justify-content: center; /* Center the navbar */
@@ -130,11 +130,11 @@ footer {
   }
   
   footer nav a.active {
-    color: #fdd835;
+    color: #f7c648;
   }
   
   footer nav a:hover {
-    color: #fdd835;
+    color: #f7c648;
   }
 
 .recent-activities {
@@ -234,7 +234,7 @@ footer {
 .title-link h1 {
     margin: 0;
     font-size: 2rem;
-    background: linear-gradient(to bottom, #e8c84c, #ffffff);
+    background: linear-gradient(to bottom, #f7c648, #ffffff);
     /* Golden to white gradient */
     background-clip: text;
     -webkit-background-clip: text;

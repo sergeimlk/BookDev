@@ -30,7 +30,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem; /* Decrease padding to reduce navbar height */
-  background: linear-gradient(to right, #4b0082, #8a2be2); /* Dark violet gradient */
+  background: linear-gradient(to right, #4D3857, #3d1e54); /* Dark violet gradient */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
@@ -45,7 +45,7 @@ header h1 {
   font-size: 2rem;
   flex-grow: 1;
   text-align: center;
-  background: linear-gradient(to bottom, #e8c84c, #ffffff); /* Golden to white gradient */
+  background: linear-gradient(to bottom, #f7c648, #ffffff); /* Golden to white gradient */
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -10,7 +10,7 @@ header {
     justify-content: center; /* Center the content */
     align-items: center;
     padding: 0.25rem; /* Reduce the padding to reduce the height by 50% */
-    background: linear-gradient(to right, #4b0082, #8a2be2); /* Dark violet gradient */
+    background: linear-gradient(to right, #4D3857, #3d1e54); /* Dark violet gradient */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
 }
@@ -18,7 +18,7 @@ header {
 header h1 {
     font-size: 2rem;
     text-align: center; /* Center the text */
-    background: linear-gradient(to bottom, #e8c84c, #ffffff); /* Golden to white gradient */
+    background: linear-gradient(to bottom, #f7c648, #ffffff); /* Golden to white gradient */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -262,7 +262,7 @@ footer {
     width: 100%; /* Ensure the footer spans the full width */
     position: fixed;
     bottom: 0;
-    background: linear-gradient(to right, #4b0082, #8a2be2); /* Dark violet gradient */
+    background: linear-gradient(to right, #4D3857, #3d1e54); /* Dark violet gradient */
     padding: 1rem 0;
     display: flex;
     justify-content: center; /* Center the navbar */
@@ -283,11 +283,11 @@ footer nav a {
 }
 
 footer nav a.active {
-    color: #fdd835;
+    color: #f7c648;
 }
 
 footer nav a:hover {
-    color: #fdd835;
+    color: #f7c648;
 }
 
 @media (max-width: 768px) {
