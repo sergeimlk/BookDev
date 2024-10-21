@@ -1,5 +1,4 @@
 body {
-    margin-top: 30px;
     color: #4b0082;
     margin: 0;
     padding: 70px 0;
@@ -8,48 +7,54 @@ body {
 
 .profile-container {
     max-width: 800px;
-    margin: 0 auto;
-    background-color: white;
-    box-shadow: 0 5px 20px #4b0082;
+    background-color: rgba(74, 0, 128, 0.1);
+    box-shadow: 0 20px 20px rgb(74, 0, 128);
     border-radius: 50px;
     padding: 30px;
-    width: 70%; /* Reduce the width by 30% */
-    margin: 0 auto; /* Center the div */
+    width: 60%; /* Reduce the width by 30% */
+    position: absolute; /* Position the div absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%) scale(0.8); /* Adjust position to truly center and scale down */
+    margin-top: 25rem; /* Add top margin to center */
+    backdrop-filter: blur(4px); /* Add blur effect for glass mode */
+    -webkit-backdrop-filter: blur(10px); /* Add blur effect for Safari */
+    border: 1px solid rgba(255, 255, 255, 0.512); /* Add white border */
 }
 
 .profile-header {
     display: flex;
     align-items: flex-start;
-    padding-bottom: 20px;
 }
-
 
 /* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem; /* Decrease padding to reduce navbar height */
-  background: linear-gradient(to top, #4D3857, #3d1e54); /* Dark violet gradient */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1000;
-  height: 5rem; /* Garde la hauteur de la navbar inchangée */
+    width: 100%; /* Ensure the header spans the full width */
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center;
+    padding: 0.25rem; /* Reduce the padding to reduce the height by 50% */
+    background: linear-gradient(to top, #4D3857, #3d1e54); /* Dark violet gradient */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fix the header to the top of the page */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Ensure the header stays above other content */
 }
 
 header h1 {
-  font-size: 2rem;
-  flex-grow: 1;
-  text-align: center;
-  background: linear-gradient(to bottom, #f7c648, #ffffff); /* Golden to white gradient */
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-decoration: none; /* Prevent underline */
+    font-size: 2rem;
+    text-align: center; /* Center the text */
+    background: linear-gradient(to bottom, #f7c648, #ffffff); /* Golden to white gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none; /* Prevent underline */
+    margin: 0;
+    flex-grow: 1; /* Allow the title to take up available space */
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
 }
 
 
@@ -95,11 +100,12 @@ header h1 {
 }
 
 .user-info h1 {
-    color: #4b0082;
+    color: #ffffff;
 }
 
 .user-info p {
     margin: 5px 0;
+    color: white;
 }
 
 .btn-modifier {
@@ -127,7 +133,8 @@ header h1 {
 
 .account-stats {
     border-right: 5px solid #8a2be2;
-    border-top: 5px solid #8a2be2;    background-color: #f4f4f9;
+    border-top: 5px solid #8a2be2;
+    background-color: #f4f4f9;
     color: hsl(275, 100%, 25%);
     padding: 30px;
     border-radius: 40px;
@@ -146,9 +153,20 @@ header h1 {
 }
 
 .favorite-books h1 {
-    color: #4b0082;
+    color: white;
     margin-left: 2rem;
 }
+
+.livres-pref {
+    border-right: 5px solid #8a2be2;
+    border-top: 5px solid #8a2be2;
+    background-color: #f4f4f9;
+    color: hsl(275, 100%, 25%);
+    padding: 30px;
+    border-radius: 40px;
+    flex-shrink: 0;
+}
+
 
 .book {
     background-color: #f4f4f9;
