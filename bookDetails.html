@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,Aopsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="bookDetailsStyle.css" />
@@ -38,81 +38,79 @@
       </div>
     </header>
     <main>
-      <div class="filAriane">
-        <a href="index.html" aria-label="Accueil">Accueil</a>
-        <span> > </span>
-        <a href="bookDetails.html" aria-label="Titre du livre"
-          >Titre du livre</a
-        >
-      </div>
-      <div class="main-container">
-        <div class="bookDetails-container">
-          <img
-            src="IMG/metamorphose.png"
-            alt="Couverture du livre"
-            class="book-cover"
-          />
-          <div class="book-details">
-            <h3 class="details-title">Titre du livre</h3>
-            <span class="book-info">
-              <p class="book-author">Auteur</p>
-              <p class="book-date">Date de publication : 1915</p>
-            </span>
-            <span
-              class="solid-stars"
-              aria-label="Évaluation du livre : 5 étoiles"
-            >
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </span>
-          </div>
+      <div id="bookDetails-page">
+        <div class="filAriane">
+          <a href="index.html" aria-label="Accueil">Accueil</a>
+          <span> > </span>
+          <a href="bookDetails.html" aria-label="Titre du livre"
+            >Titre du livre</a
+          >
         </div>
-        <section
-          class="nav-about"
-          aria-label="Navigation dans les informations sur le livre"
-        >
-          <a href="#" class="active-page" aria-label="À propos de ce livre"
-            >À propos de ce livre</a
+        <div id="main-container">
+          <div id="bookDetails-container">
+            <div id="book-details">
+              <h3 class="details-title">Titre du livre</h3>
+              <span class="book-info">
+                <p class="book-author">Auteur</p>
+                <p class="book-date">Date de publication : 1915</p>
+              </span>
+              <span
+                class="solid-stars"
+                aria-label="Évaluation du livre : 5 étoiles"
+              >
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+            </div>
+          </div>
+          <section
+            class="nav-about"
+            aria-label="Navigation dans les informations sur le livre"
           >
-          <a href="#" class="nav-link" aria-label="Informations sur l'auteur"
-            >L'auteur</a
-          >
-          <a href="#" class="nav-link" aria-label="Lire les critiques"
-            >Critiques</a
-          >
-        </section>
-        <div class="about-container">
-          <section class="about">
-            <h2>À propos de cet e-book</h2>
-            <br />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              ultricies, nunc nec vehicula ultricies, nunc nec vehicula
-              ultricies, nunc nec vehicula. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Nihil nobis libero laboriosam
-              dolorum. Nemo ipsam amet magnam architecto cumque provident
-              accusamus molestiae, velit, autem itaque consectetur a distinctio
-              necessitatibus ullam.
-            </p>
-          </section>
-          <section class="cta">
-            <button
-              class="cta-btn-phones"
-              aria-label="Écouter la version audio"
+            <a href="#" class="active-page" aria-label="À propos de ce livre"
+              >À propos de ce livre</a
             >
-              <span class="text-audio">Version audio</span>
-              <i class="fa-solid fa-headphones"></i>
-            </button>
-            <button class="cta-btn-read" aria-label="Lire le livre">
-              lire le livre
-            </button>
+            <a href="#" class="nav-link" aria-label="Informations sur l'auteur"
+              >L'auteur</a
+            >
+            <a href="#" class="nav-link" aria-label="Lire les critiques"
+              >Critiques</a
+            >
           </section>
+          <div class="about-container">
+            <section class="about">
+              <h2>À propos de cet e-book</h2>
+              <br />
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                ultricies, nunc nec vehicula ultricies, nunc nec vehicula
+                ultricies, nunc nec vehicula. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Nihil nobis libero laboriosam
+                dolorum. Nemo ipsam amet magnam architecto cumque provident
+                accusamus molestiae, velit, autem itaque consectetur a
+                distinctio necessitatibus ullam.
+              </p>
+            </section>
+            <section class="cta">
+              <button
+                class="cta-btn-phones"
+                aria-label="Écouter la version audio"
+              >
+                <span class="text-audio">Version audio</span>
+                <i class="fa-solid fa-headphones"></i>
+              </button>
+              <button class="cta-btn-read" aria-label="Lire le livre">
+                lire le livre
+              </button>
+            </section>
+          </div>
         </div>
       </div>
     </main>
     <script src="fetchDatas.js"></script>
+    <!-- <script src="displayDatas.js"></script> -->
   </body>
 </html>

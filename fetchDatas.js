@@ -10,13 +10,21 @@ async function getData() {
 }
 
 getData().then((data) => {
+  const queryString_url_id = window.location.search;
+  console.log("id dans l'url", queryString_url_id);
+
+  const urlParams = new URLSearchParams(queryString_url_id);
+  console.log("object url params", urlParams);
+  const theId = urlParams.get("id");
+  console.log("the id", theId);
+
   // Vérifier sur quelle page on est
   const isIndexPage = document.querySelector(".popular"); // Check si on est sur index.html
   const isMesLivresPage = document.getElementById("book-list"); // Check si on est sur mes-livres.html
-  const bookDetailsPage = document.getElementById("book-details"); // Check si on est sur bookDetails.html
+  const isBookDetailsPage = document.getElementById("bookDetails-container"); // Check si on est sur bookDetails.html
 
+  //PAGE INDEX --- HOME
   if (isIndexPage) {
-    // On est sur index.html, on affiche les livres dans la section "Populaire"
     const popularContainer = document.querySelector(".popular .carousel");
     popularContainer.innerHTML = "";
 
@@ -51,8 +59,9 @@ getData().then((data) => {
       // add la bookCard au conteneur "Populaire"
       popularContainer.appendChild(bookCard);
     });
-  } else if (isMesLivresPage) {
-    // On est sur mes-livres.html, on affiche les livres dans la liste des livres
+  }
+  //PAGE MES LIVRES --TOUS LES LIVRES
+  else if (isMesLivresPage) {
     const bookListContainer = document.getElementById("book-list");
     bookListContainer.innerHTML = "";
 
@@ -84,61 +93,71 @@ getData().then((data) => {
       bookmark.classList.add("bookmark");
       bookmark.innerHTML = "&#9733;";
 
-      bookDiv.appendChild(bookImage);
-      bookDiv.appendChild(bookRating);
-      bookDiv.appendChild(bookTitle);
-      bookDiv.appendChild(bookAuthor);
-      bookDiv.appendChild(bookPrice);
-      bookDiv.appendChild(bookmark);
+      const bookLink = document.createElement("a");
+      bookLink.href = `bookDetails.html?id=${book.id}`;
 
+      bookLink.appendChild(bookImage);
+      bookLink.appendChild(bookRating);
+      bookLink.appendChild(bookTitle);
+      bookLink.appendChild(bookAuthor);
+      bookLink.appendChild(bookPrice);
+      bookLink.appendChild(bookmark);
+
+      bookDiv.appendChild(bookLink);
       bookListContainer.appendChild(bookDiv);
     });
-  } else if (bookDetailsPage) {
-    // On est sur bookDetails.html, on affiche les détails du livre
-    const bookId = new URLSearchParams(window.location.search).get("id");
-    const book = data.books.find((book) => book.id === bookId);
-
+  }
+  //PAGE DETAILS DU LIVRE -- BOOK DETAILS
+  if (isBookDetailsPage) {
     const bookDetailsContainer = document.getElementById("book-details");
-    bookDetailsContainer.innerHTML = "";
+    console.log("hello from book details page");
+    console.log("datas de book details", data);
 
-    const bookDiv = document.createElement("div");
-    bookDiv.classList.add("book-details");
+    // Convertir theId en nombre pour la comparaison
+    const numericId = Number(theId);
 
-    const bookImage = document.createElement("img");
-    bookImage.src = book.image;
-    bookImage.alt = book.title;
+    const selectedBook = data.books.find((book) => book.id === numericId);
+    console.log("hello");
+    console.log("selected book", selectedBook);
 
-    const bookRating = document.createElement("div");
-    bookRating.classList.add("book-rating");
-    bookRating.textContent = `${"★".repeat(book.rating)} Note`;
+    if (selectedBook) {
+      if (selectedBook) {
+        bookDetailsContainer.innerHTML = `
+          <h3 class="details-title">${selectedBook.title}</h3>
+          <span class="book-info">
+            <p class="book-author"> ${selectedBook.author}</p>
+            <p class="book-date">Date de publication : ${
+              selectedBook.publicationDate
+            }</p>
+          </span>
+          <span class="solid-stars" aria-label="Évaluation du livre : ${"★".repeat(
+            selectedBook.rating
+          )} étoiles">
+            ${"★".repeat(selectedBook.rating)}
+          </span>
+        `;
 
-    const bookTitle = document.createElement("div");
-    bookTitle.classList.add("book-title");
-    bookTitle.textContent = book.title;
+        const bookCoverImage = document.createElement("img");
+        bookCoverImage.src = selectedBook.image;
+        bookCoverImage.alt = selectedBook.title;
 
-    const bookAuthor = document.createElement("div");
-    bookAuthor.classList.add("book-author");
-    bookAuthor.textContent = book.author;
+        const bookDetailsContainerMain = document.getElementById(
+          "bookDetails-container"
+        );
+        bookDetailsContainerMain.prepend(bookCoverImage);
 
-    const bookPrice = document.createElement("div");
-    bookPrice.classList.add("book-price");
-    bookPrice.textContent = `$${book.price}`;
-
-    const bookDescription = document.createElement("div");
-    bookDescription.classList.add("book-description");
-    bookDescription.textContent = book.description;
-
-    bookDiv.appendChild(bookImage);
-    bookDiv.appendChild(bookRating);
-    bookDiv.appendChild(bookTitle);
-    bookDiv.appendChild(bookAuthor);
-    bookDiv.appendChild(bookPrice);
-    bookDiv.appendChild(bookDescription);
-
-    bookDetailsContainer.appendChild(bookDiv);
+        const aboutContainer = document.querySelector(
+          ".about-container .about"
+        );
+        aboutContainer.innerHTML = `
+          <h2>À propos de cet e-book</h2>
+          <br />
+          <p>${selectedBook.description}</p>
+        `;
+      }
+      console.log("Livre non trouvé");
+    }
   } else {
-    console.log("erreur");
+    console.log("erreur !!");
   }
 });
-
-//récup les donnnées de book pour la page bookDetails et les affiche dans le DOM à partir de l'id de l'url TOOOOODOOOOOO !!
