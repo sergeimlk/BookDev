@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BIBLIOMANIAC</title>
+    <!-- TODO ajouter metadonnées et title -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -46,8 +47,8 @@
             >Titre du livre</a
           >
         </div>
-        <div id="main-container">
-          <!-- ciblage bookDetails-container en tant que conteneur principal pour fetchDatas.js (const bookDetailsContainer)-->
+        <div id="bookDetailsMain-container">
+          <!-- ciblage bookDetails-container en tant que conteneur principal pour fetchDatas.js (const bookDetailsContainer) update : j'ai changé j'ai mis bookDetailsMain-container pour tester-->
           <div id="bookDetails-container">
             <!-- creation des elements par fetchDatas.js pour la modif du dom (innerHTML etc...) img titre autur date stars -->
 
@@ -90,8 +91,9 @@
           </section>
 
           <div class="about-container">
+            <!-- ciblage de about-container pour modif du dom pour fetchDatas.js (const aboutContainer) -->
             <section class="about">
-              <h2>À propos de cet e-book</h2>
+              <!-- <h2>À propos de cet e-book</h2>
               <br />
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
@@ -101,7 +103,7 @@
                 dolorum. Nemo ipsam amet magnam architecto cumque provident
                 accusamus molestiae, velit, autem itaque consectetur a
                 distinctio necessitatibus ullam.
-              </p>
+              </p> -->
             </section>
             <section class="cta">
               <button

@@ -24,7 +24,9 @@ getData().then((data) => {
   // Vérifier sur quelle page on est
   const isIndexPage = document.querySelector(".popular"); // Check si on est sur index.html
   const isMesLivresPage = document.getElementById("book-details"); // Check si on est sur mes-livres.html
-  const isBookDetailsPage = document.getElementById("bookDetails-container"); // Check si on est sur bookDetails.html
+  const isBookDetailsPage = document.getElementById(
+    "bookDetailsMain-container"
+  ); // Check si on est sur bookDetails.html
   const isAuthorPage = document.getElementById("author-main-container"); // Check si on est sur author.html
 
   //PAGE INDEX --- HOME
