@@ -10,7 +10,7 @@ header {
     justify-content: center; /* Center the content */
     align-items: center;
     padding: 0.25rem; /* Reduce the padding to reduce the height by 50% */
-    background: linear-gradient(to right, #4D3857, #3d1e54); /* Dark violet gradient */
+    background: linear-gradient(to bottom, #4D3857, #3d1e54); /* Dark violet gradient */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
 }
@@ -276,7 +276,7 @@ footer {
     width: 100%; /* Ensure the footer spans the full width */
     position: fixed;
     bottom: 0;
-    background: linear-gradient(to right, #4D3857, #3d1e54); /* Dark violet gradient */
+    background: linear-gradient(to bottom, #4D3857, #3d1e54); /* Dark violet gradient */
     padding: 1rem 0;
     display: flex;
     justify-content: center; /* Center the navbar */
