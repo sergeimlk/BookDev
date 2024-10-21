@@ -10,16 +10,16 @@ body {
     background-color: rgba(74, 0, 128, 0.1);
     box-shadow: 0 20px 20px rgb(74, 0, 128);
     border-radius: 50px;
-    padding: 30px;
+    padding: 40px;
     width: 60%; /* Reduce the width by 30% */
     position: absolute; /* Position the div absolutely */
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%) scale(0.8); /* Adjust position to truly center and scale down */
-    margin-top: 25rem; /* Add top margin to center */
+    margin-top: 35rem; /* Add top margin to center */
     backdrop-filter: blur(4px); /* Add blur effect for glass mode */
     -webkit-backdrop-filter: blur(10px); /* Add blur effect for Safari */
-    border: 1px solid rgba(255, 255, 255, 0.512); /* Add white border */
+    border: 1px solid white; /* Add white border */
 }
 
 .profile-header {
@@ -55,6 +55,18 @@ header h1 {
     display: flex;
     justify-content: center; /* Center the text horizontally */
     align-items: center; /* Center the text vertically */
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem; /* Further adjust font size for very small screens */
+    }
 }
 
 
@@ -158,13 +170,14 @@ header h1 {
 }
 
 .livres-pref {
+    border-left: 5px solid #8a2be2;
     border-right: 5px solid #8a2be2;
-    border-top: 5px solid #8a2be2;
-    background-color: #f4f4f9;
+    border-bottom: 5px solid #8a2be2;
     color: hsl(275, 100%, 25%);
-    padding: 30px;
     border-radius: 40px;
     flex-shrink: 0;
+    margin-right: 25rem;
+    margin-bottom: 1rem;
 }
 
 
