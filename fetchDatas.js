@@ -190,6 +190,8 @@ getData().then((data) => {
     console.log("Nom de l'auteur : ", authorName);
 
     if (selectedAuthor) {
+      //creation du lien vers le livre de l'auteur
+
       authorContainer.innerHTML = `
         <h3 class="details-title">${selectedAuthor.author}</h3>
         <span class="author-info">
@@ -202,6 +204,8 @@ getData().then((data) => {
         <br />
         <p>${selectedAuthor.aboutAuthor}</p>
       `;
+      const linkBook = document.getElementById("link-book");
+      linkBook.href = `bookDetails.html?id=${selectedAuthor.id}`;
     }
   } else {
     console.log("erreur !!");
