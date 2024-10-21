@@ -274,28 +274,13 @@ main {
   /* Effet de survol pour les cartes */
 }
 
-.book-img-container {
-  width: calc(100% + 30px);
-  /* Make the image container slightly larger */
-  height: 170px;
-  /* Adjust the height as necessary */
-  overflow: visible;
-  /* Allow the image to overflow */
-  border-radius: 30px;
-  margin-bottom: 15px;
-  position: relative;
-}
 
 .book img {
-  width: 90%;
+  width: 120%;
   height: 120%;
   object-fit: cover;
   border-radius: 30px;
   position: relative;
-  top: -40px;
-  /* Adjust this value to control how much the image overflows */
-  left: 10px;
-  /* Move the image 10px to the right */
 }
 
 .book-info {
