@@ -5,6 +5,84 @@
   box-sizing: border-box;
 }
 
+:root {
+  --accent: #4D3857;
+  --border-width: 4px;
+  --border-radius: 20px;
+  --font-size: 16px;
+  --tab-active-bg: #4D3857;
+  --tab-inactive-bg: #e0e0e0;
+  --tab-active-color: #ffffff;
+  --tab-inactive-color: #4D3857;
+}
+
+.tabs {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  border: solid var(--border-width) var(--accent);
+  border-radius: var(--border-radius);
+  padding: 10px;
+  background: none;
+  margin: 0 auto;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs label {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: var(--font-size);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tabs label.tab {
+  background: var(--tab-inactive-bg);
+  color: var(--tab-inactive-color);
+  border-radius: var(--border-radius);
+}
+
+.tabs input[type="radio"]:checked + label {
+  background: var(--tab-active-bg);
+  color: var(--tab-active-color);
+}
+
+.tabs #flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background-color: var(--tab-active-bg);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+
+.tabs #fav:checked ~ #flap {
+  transform: translateX(0);
+}
+
+.tabs #downloaded:checked ~ #flap {
+  transform: translateX(100%);
+}
+
+.tabs #flap .content {
+  color: var(--tab-active-color);
+  font-size: var(--font-size);
+  font-weight: bold;
+}
+
 header {
   width: 100%; /* Ensure the header spans the full width */
   display: flex;
@@ -28,7 +106,14 @@ header h1 {
   flex-grow: 1; /* Allow the title to take up available space */
 }
 
-.back-button
+.back-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  padding-left: 1rem;
+}
 
 .title-link {
   padding-left: 7rem;
@@ -259,11 +344,16 @@ main {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: white;
+  color: #ffcc00; /* Yellow color for the star */
   font-size: 24px;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 5px;
-  border-radius: 50%;
+  border-radius: 50%; /* Make the background perfectly round */
+  width: 34px; /* Ensure the width and height are equal */
+  height: 34px; /* Ensure the width and height are equal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
