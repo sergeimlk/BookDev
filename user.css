@@ -27,34 +27,32 @@ body {
     align-items: flex-start;
 }
 
-/* Header */
 header {
-    width: 100%; /* Ensure the header spans the full width */
     display: flex;
-    justify-content: center; /* Center the content */
-    align-items: center;
-    padding: 0.25rem; /* Reduce the padding to reduce the height by 50% */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 0.5rem 1rem;
     background: linear-gradient(to top, #4D3857, #3d1e54); /* Dark violet gradient */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Fix the header to the top of the page */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    z-index: 1000; /* Ensure the header stays above other content */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 4rem; /* Garde la hauteur de la navbar inchangée */
 }
 
 header h1 {
     font-size: 2rem;
-    text-align: center; /* Center the text */
-    background: linear-gradient(to bottom, #f7c648, #ffffff); /* Golden to white gradient */
+    flex-grow: 1;
+    text-align: center;
+    background: linear-gradient(to bottom, #e8c84c, #ffffff); /* Golden to white gradient */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none; /* Prevent underline */
-    margin: 0;
-    flex-grow: 1; /* Allow the title to take up available space */
-    display: flex;
-    justify-content: center; /* Center the text horizontally */
-    align-items: center; /* Center the text vertically */
+    margin: 3rem; /* Remove default margin */
 }
 
 @media (max-width: 768px) {
@@ -443,4 +441,111 @@ header h1 {
     88%, 100% {
         opacity: 0;
     }
+}
+
+
+.animated-icon {
+    display: flex;
+    align-items: center;
+    overflow: visible;
+    /* Permet de dépasser si nécessaire */
+}
+
+@keyframes book-bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    80% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes shelf-lift {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    20% {
+        transform: translateY(-4px) rotate(10deg);
+    }
+
+    40% {
+        transform: translateY(-4px) rotate(0);
+    }
+
+    40% {
+        transform: translateY(-4px) rotate(-10deg);
+    }
+
+    80% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.book-shelf {
+    cursor: pointer;
+    transform: scale(2.5);
+    /* Double la taille de l'icône */
+    transform-origin: center;
+    /* Assure que l'agrandissement se fait depuis le centre */
+}
+
+.book-shelf:hover {
+    cursor: pointer;
+    transform: scale(3);
+    /* Double la taille de l'icône */
+    transform-origin: center;
+    /* Assure que l'agrandissement se fait depuis le centre */
+}
+
+.book-shelf:hover .book-shelf__book {
+    animation: book-bounce 0.4s ease;
+    animation-iteration-count: 1;
+}
+
+.book-shelf:hover .book-shelf__book--two {
+    animation-delay: 0.04s;
+}
+
+.book-shelf:hover .book-shelf__book--three {
+    animation-delay: 0.08s;
+}
+
+.book-shelf:hover .book-shelf__shelf {
+    animation: shelf-lift 0.4s ease;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+}
+
+@keyframes move-right-fade-out {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+}
+
+.book-shelf.clicked {
+    animation: move-right-fade-out 0.5s forwards;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
